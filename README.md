@@ -2,7 +2,7 @@
 
 אתר תדמית אישי, עמוד יחיד, עברית ואנגלית (RTL/LTR), ללא תלויות בנייה.
 
-- **Live:** https://ahmad-sarsor.github.io/portfolio/
+- **Live:** https://ahmad-sarsor.github.io/freelancer_ahmad/
 - **Branch:** `gh-pages` (GitHub Pages מוגש ממנה)
 
 ## מבנה
