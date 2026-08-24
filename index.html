@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</title>
+<meta name="description" content="אחמד סרסור — מהנדס דאטה פרילנסר. מחסני נתונים, תהליכי ETL/ELT, מערכות BI, אפליקציות דאטה ומערכות אייג׳נטים.">
+<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+.hv0:hover { color: #fff !important }
+.hv1:hover { color: #fff !important }
+.hv2:hover { color: #fff !important }
+.hv3:hover { color: #fff !important }
+.hv4:hover { color: #fff !important }
+.hv5:hover { background: rgba(255,255,255,.14) !important }
+.hv6:hover { background: #2ED0FF !important }
+.hv7:hover { transform: translateY(-2px) !important }
+.hv8:hover { background: rgba(255,255,255,.13) !important }
+.hv9:hover { background: #F7FAFD !important }
+.hv10:hover { background: #F7FAFD !important }
+.hv11:hover { background: #F7FAFD !important }
+.hv12:hover { background: #F7FAFD !important }
+.hv13:hover { background: #F7FAFD !important }
+.hv14:hover { background: #F7FAFD !important }
+.hv15:hover { background: #F7FAFD !important }
+.hv16:hover { background: #F7FAFD !important }
+.hv17:hover { background: #F7FAFD !important }
+.hv18:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv19:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv20:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv21:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv22:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv23:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv24:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv25:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv26:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv27:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv28:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv29:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.hv30:hover { background: rgba(255,255,255,.11) !important }
+.hv31:hover { background: rgba(255,255,255,.11) !important }
+.hv32:hover { background: rgba(255,255,255,.11) !important }
+.hv33:hover { transform: translateY(-2px) !important }
+.hv34:hover { transform: translateY(-2px) !important }
+  body { margin: 0; background: #07131F; }
+  a { color: #0A5F9C; }
+  a:hover { color: #17A9EA; }
+  input, textarea, select, button { font: inherit; }
+  input:focus, textarea:focus, select:focus { outline: 2px solid #17A9EA; outline-offset: 2px; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes flow { 0% { top: 4%; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: 96%; opacity: 0; } }
+  @keyframes pulse { 0%,100% { opacity: .35; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+</style>
+</head>
+<body>
+<div id="top" dir="rtl" style="font-family: 'Assistant', 'Segoe UI', sans-serif; font-size: 17px; line-height: 1.7; color: #0C1B2A; background: #FFFFFF; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(7,19,31,.72); backdrop-filter: saturate(150%) blur(14px); border-bottom: 1px solid rgba(255,255,255,.08)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff">
+        <span style="width: 34px; height: 34px; border-radius: 10px; flex: none; display: grid; place-items: center; background: linear-gradient(140deg, #2ED0FF, #0A5F9C); color: #04121D; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: .02em">AS</span>
+        <span style="display: grid; line-height: 1.25">
+          <span style="font-weight: 700; font-size: 16px; color: #fff" data-en="Ahmad Sarsor">אחמד סרסור</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; color: #6C8BA6; text-transform: uppercase">Data &amp; BI</span>
+        </span>
+      </a>
+      <nav style="display: flex; gap: 26px; align-items: center; flex-wrap: wrap">
+        <a href="#services" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv0" data-en="Services">שירותים</a>
+        <a href="#process" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv1" data-en="Process">תהליך העבודה</a>
+        <a href="#tech" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv2" data-en="Stack">כלים</a>
+        <a href="#clients" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv3" data-en="Clients">לקוחות</a>
+        <a href="#cv" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv4" data-en="CV">קורות חיים</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <button type="button" id="lang-toggle" style="display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #DCE7F0; border-radius: 999px; padding: 7px 13px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .08em" class="hv5">
+          <span id="lang-label">EN</span>
+        </button>
+        <a href="#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; background: #fff; color: #07131F" class="hv6" data-en="Let's talk">דברו איתי</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="position: relative; overflow: hidden; background: #07131F; color: #fff; padding: 96px 0 0">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 74px 74px; mask-image: radial-gradient(ellipse 90% 70% at 60% 0%, #000 30%, transparent 78%)"></div>
+    <div style="position: absolute; width: 760px; height: 760px; border-radius: 50%; inset-inline-start: -240px; top: -420px; background: radial-gradient(circle, rgba(46,208,255,.22), transparent 62%)"></div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 64px; align-items: center">
+        <div>
+          <span style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(53,208,127,.34); background: rgba(53,208,127,.09); color: #7BE3B0; border-radius: 999px; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .08em">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #35D07F; animation: pulse 2.4s ease-in-out infinite"></span>
+            <span data-en="Available for new projects">פנוי לפרויקטים חדשים</span>
+          </span>
+          <h1 style="font-size: clamp(36px, 5.4vw, 62px); line-height: 1.06; letter-spacing: -.03em; font-weight: 800; margin: 22px 0 0; text-wrap: pretty" data-en="One number you can trust — from source to dashboard.">מספר אחד אמין לכל שאלה. מהמקור ועד הדשבורד.</h1>
+          <p style="font-size: 19.5px; color: #9FB6C9; max-width: 540px; margin: 22px 0 0; text-wrap: pretty" data-en="I'm Ahmad Sarsor, a freelance data engineer. I build warehouses, ETL/ELT pipelines, BI systems, data apps and AI agents — for organizations that are done arguing about whose number is right.">אני אחמד סרסור, מהנדס דאטה פרילנסר. מקים מחסני נתונים, תהליכי ETL/ELT, מערכות BI, אפליקציות דאטה ומערכות אייג׳נטים — לארגונים שנמאס להם לריב על השאלה של מי המספר הנכון.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 0">
+            <a href="#contact" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D; box-shadow: 0 18px 40px -18px rgba(46,208,255,.9)" class="hv7" data-en="Start a project">בואו נתחיל פרויקט</a>
+            <a href="https://wa.me/972528756806?text=%D7%94%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%D7%9A" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.2)" class="hv8">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="#25D366" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.23 8.24z"></path><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"></path></svg>
+              <span data-en="WhatsApp">וואטסאפ</span>
+            </a>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 40px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .1em; color: #6C8BA6; text-transform: uppercase">
+            <span>Data Engineer</span><span style="color: #22384A">/</span>
+            <span>Data Analyst</span><span style="color: #22384A">/</span>
+            <span>BI Developer</span><span style="color: #22384A">/</span>
+            <span>Data Apps &amp; AI Agents</span>
+          </div>
+        </div>
+
+        <div dir="ltr" style="background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.13); border-radius: 24px; padding: 22px; box-shadow: 0 50px 90px -40px rgba(0,0,0,.85)">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #7FA3BC">PIPELINE · DAILY 03:00</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7BE3B0"><span style="width: 6px; height: 6px; border-radius: 50%; background: #35D07F"></span>HEALTHY</span>
+          </div>
+          <div style="position: relative; display: grid; gap: 10px">
+            <div style="position: absolute; inset-inline-start: 26px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(#2ED0FF33, #2ED0FF11)"></div>
+            <div style="position: absolute; inset-inline-start: 22px; width: 10px; height: 10px; border-radius: 50%; background: #2ED0FF; box-shadow: 0 0 14px #2ED0FF; animation: flow 3.4s linear infinite"></div>
+            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 13px 16px; position: relative; z-index: 1">
+              <span style="width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-size: 11px">01</span>
+              <span style="flex: 1; font-size: 14.5px; font-weight: 600; color: #EAF3F9">Sources · CRM, ERP, Files</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7FA3BC">12</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 13px 16px; position: relative; z-index: 1">
+              <span style="width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-size: 11px">02</span>
+              <span style="flex: 1; font-size: 14.5px; font-weight: 600; color: #EAF3F9">Ingest &amp; Transform · Dataform · dbt</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7FA3BC">98%</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 13px 16px; position: relative; z-index: 1">
+              <span style="width: 26px; height: 26px; border-radius: 8px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-size: 11px">03</span>
+              <span style="flex: 1; font-size: 14.5px; font-weight: 600; color: #EAF3F9">Warehouse · Core &amp; Marts</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7FA3BC">OK</span>
+            </div>
+          </div>
+          <div style="margin-top: 16px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 18px">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #7FA3BC">REVENUE / WEEK</span>
+              <span style="font-size: 13px; color: #7BE3B0; font-weight: 700">+18.4%</span>
+            </div>
+            <div style="display: flex; align-items: flex-end; gap: 8px; height: 92px">
+              <div style="flex: 1; height: 38%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF88, #2ED0FF22)"></div>
+              <div style="flex: 1; height: 54%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF88, #2ED0FF22)"></div>
+              <div style="flex: 1; height: 46%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF88, #2ED0FF22)"></div>
+              <div style="flex: 1; height: 71%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF88, #2ED0FF22)"></div>
+              <div style="flex: 1; height: 62%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF88, #2ED0FF22)"></div>
+              <div style="flex: 1; height: 88%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF, #2ED0FF33)"></div>
+              <div style="flex: 1; height: 100%; border-radius: 5px 5px 2px 2px; background: linear-gradient(#2ED0FF, #2ED0FF33)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 78px; border-top: 1px solid rgba(255,255,255,.08); padding: 26px 0 30px; overflow: hidden; position: relative">
+        <div style="display: flex; width: max-content; gap: 56px; align-items: center; animation: marquee 34s linear infinite; opacity: .85">
+          <img src="assets/logos/python.svg" alt="Python" style="height: 30px; width: auto" />
+          <img src="assets/logos/sqlserver.svg" alt="SQL Server" style="height: 30px; width: auto" />
+          <img src="assets/logos/snowflake.svg" alt="Snowflake" style="height: 26px; width: auto" />
+          <img src="assets/logos/bigquery.svg" alt="BigQuery" style="height: 26px; width: auto" />
+          <img src="assets/logos/dbt.svg" alt="dbt" style="height: 28px; width: auto" />
+          <img src="assets/logos/airflow.svg" alt="Airflow" style="height: 30px; width: auto" />
+          <img src="assets/logos/powerbi.svg" alt="Power BI" style="height: 30px; width: auto" />
+          <img src="assets/logos/tableau.svg" alt="Tableau" style="height: 28px; width: auto" />
+          <img src="assets/logos/looker.svg" alt="Looker" style="height: 30px; width: auto" />
+          <img src="assets/logos/excel.svg" alt="Excel" style="height: 28px; width: auto" />
+          <img src="assets/logos/python.svg" alt="" style="height: 30px; width: auto" />
+          <img src="assets/logos/sqlserver.svg" alt="" style="height: 30px; width: auto" />
+          <img src="assets/logos/snowflake.svg" alt="" style="height: 26px; width: auto" />
+          <img src="assets/logos/bigquery.svg" alt="" style="height: 26px; width: auto" />
+          <img src="assets/logos/dbt.svg" alt="" style="height: 28px; width: auto" />
+          <img src="assets/logos/airflow.svg" alt="" style="height: 30px; width: auto" />
+          <img src="assets/logos/powerbi.svg" alt="" style="height: 30px; width: auto" />
+          <img src="assets/logos/tableau.svg" alt="" style="height: 28px; width: auto" />
+          <img src="assets/logos/looker.svg" alt="" style="height: 30px; width: auto" />
+          <img src="assets/logos/excel.svg" alt="" style="height: 28px; width: auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="padding: 104px 0; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: end; margin-bottom: 54px">
+        <div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">01 — Services</span>
+          <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 0" data-en="What I do">מה אני עושה</h2>
+        </div>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 460px; text-wrap: pretty" data-en="End-to-end delivery, or a targeted entry into a project that already exists.">ליווי מקצה לקצה, או כניסה נקודתית לפרויקט קיים — לפי מה שהארגון צריך עכשיו.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: #E4EAF1; border: 1px solid #E4EAF1; border-radius: 22px; overflow: hidden">
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv9">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">01</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="Data warehouses (DWH)">מחסני נתונים (DWH)</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Designing and building the warehouse: data model, Staging / Core / Marts layers, and a structure that stays stable as the organization grows.">תכנון והקמה של מחסן נתונים: מודל נתונים, שכבות Staging, Core ו-Marts, ומבנה שנשאר יציב גם כשהארגון גדל.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv10">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">02</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="ERD &amp; architecture design">תכנון ERD ודיאגרמות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Before a single line of code: an ERD, an architecture diagram and a written work plan — so you approve the structure while it's still on paper and cheap to change.">לפני שורת קוד אחת: דיאגרמת ERD, דיאגרמת ארכיטקטורה ותוכנית עבודה כתובה — כדי שתאשרו את המבנה כשהוא עוד על הנייר וזול לשינוי.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv11">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">03</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="ETL / ELT pipelines">תהליכי ETL / ELT</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Collecting data from source systems, cleaning and enriching it, and automating the flow with quality checks, monitoring and failure alerts.">איסוף נתונים ממערכות המקור, ניקוי וטיוב, והזרמה אוטומטית עם בקרות איכות, ניטור והתראות על כשלים.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv12">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">04</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="BI systems">פיתוח מערכות BI</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="A complete BI environment: semantic model, business metrics and definitions, permissions, performance and ongoing maintenance.">הקמת סביבת BI שלמה: מודל סמנטי, מדדים והגדרות עסקיות, הרשאות, ביצועים ותחזוקה שוטפת.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv13">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">05</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="BI &amp; data applications">פיתוח אפליקציות BI ו-DATA</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Custom applications on top of the data: internal tools, data-entry and approval screens, and embedded analytics inside the systems people already use.">אפליקציות ייעודיות מעל הדאטה: כלים פנים-ארגוניים, מסכי הזנה ואישור, ואנליטיקה משובצת בתוך המערכות שהצוות כבר עובד בהן.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv14">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">06</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="AI agent systems">פיתוח מערכות אייג׳נטים (AI Agents)</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Agents that work on your data: answering business questions in natural language, monitoring anomalies, and running routine data tasks end to end.">אייג׳נטים שעובדים על הדאטה שלכם: מענה לשאלות עסקיות בשפה חופשית, ניטור חריגות, והרצה של משימות דאטה שגרתיות מקצה לקצה.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv15">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">07</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="Dashboards &amp; reports">דשבורדים ודוחות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Operational and executive dashboards that speak the language of the business user, not the language of the tables.">דשבורדים תפעוליים וניהוליים שמדברים בשפה של המשתמש העסקי, ולא רק בשפה של הטבלאות.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv16">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">08</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="Data analysis">ניתוח נתונים</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Data exploration, KPI definition, integrity and reliability testing, and data-backed answers to business questions.">חקר נתונים, הגדרת מדדי KPI, בדיקות שלמות ואמינות, ומענה מבוסס נתונים לשאלות עסקיות.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv17">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">09</span>
+          <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="Report automation">אוטומציה של דוחות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Replacing manual Excel work with a process that runs on its own, arrives on time, and gives the team back the hours lost to copy-paste.">החלפה של עבודת אקסל ידנית בתהליך שרץ לבד, מגיע בזמן, ומחזיר לצוות את השעות שהלכו על העתק-הדבק.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" style="padding: 104px 0; background: #F4F7FA; border-top: 1px solid #E4EAF1; border-bottom: 1px solid #E4EAF1">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 50px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">02 — Process</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="How we work together">איך עובדים יחד</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 620px; text-wrap: pretty" data-en="No fixed packages — the scope is built around what you actually need. What is fixed is the order of the work: you see the design and the plan before anything gets built.">אין חבילות קבועות — ההיקף נבנה סביב מה שאתם באמת צריכים. מה שכן קבוע זה סדר העבודה: אתם רואים את התכנון ואת התוכנית לפני שנבנה משהו.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
+          <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">01</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Discovery call">שיחת אפיון</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="What questions the business needs answered, which systems hold the data, and who will use the result.">אילו שאלות הארגון צריך לענות עליהן, באילו מערכות הדאטה יושב, ומי ישתמש בתוצאה.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
+          <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">02</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="ERD &amp; diagrams">ERD ודיאגרמות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="A full ERD and architecture diagram of the target structure, reviewed with you before development starts.">דיאגרמת ERD ודיאגרמת ארכיטקטורה של המבנה המתוכנן, שעוברות איתכם עוד לפני תחילת הפיתוח.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
+          <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">03</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Work plan">תוכנית עבודה</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="Phases, deliverables and timeline in writing — including what is deliberately left out of the first phase.">שלבים, תוצרים ולוחות זמנים בכתב — כולל מה שבמכוון נשאר מחוץ לשלב הראשון.</p>
+        </div>
+        <div data-reveal="1" style="background: #07131F; color: #fff; border: 1px solid #07131F; border-radius: 20px; padding: 30px 26px 32px; box-shadow: 0 40px 70px -40px rgba(7,19,31,.7)">
+          <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(46,208,255,.16); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">04</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="See the DWH before it's built">רואים את ה-DWH לפני הפיתוח</h3>
+          <p style="margin: 0; color: #9FB6C9; font-size: 15.5px; line-height: 1.7" data-en="A walkthrough of the planned warehouse — layers, tables, keys and metrics — with sample data, so nothing is a surprise at the end.">סקירה של מחסן הנתונים המתוכנן — שכבות, טבלאות, מפתחות ומדדים — עם נתוני דוגמה, כך שאף דבר לא מפתיע בסוף.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
+          <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">05</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Build, handover &amp; support">פיתוח, מסירה וליווי</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="Development in short iterations, documentation, knowledge transfer to the team, and ongoing support as needed.">פיתוח באיטרציות קצרות, תיעוד, העברת ידע לצוות, וליווי שוטף לפי הצורך.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" style="padding: 104px 0; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 50px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">03 — Stack</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="The toolbox">הארגז כלים</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 560px" data-en="The environment is chosen to fit what the organization already runs — not what's fashionable.">הסביבה נבחרת לפי מה שכבר קיים בארגון, לא לפי אופנה.</p>
+      </div>
+
+      <div style="display: grid; gap: 34px">
+        <div data-reveal="1">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .14em; color: #8497A8; text-transform: uppercase" data-en="Languages &amp; transformation">שפות, תזמור וטרנספורמציה</span>
+            <span style="flex: 1; height: 1px; background: #E4EAF1"></span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px">
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv18">
+              <span style="width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 9px; background: #F4F7FA; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; color: #336791">SQL</span>
+              <span style="font-weight: 700; font-size: 16px">SQL</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv19">
+              <img src="assets/logos/python.svg" alt="Python" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Python</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv20">
+              <img src="assets/logos/dbt.svg" alt="dbt" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">dbt</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv21">
+              <span style="width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 9px; background: #F4F7FA; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 12px; color: #4285F4">DF</span>
+              <span style="font-weight: 700; font-size: 16px">Dataform</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv22">
+              <img src="assets/logos/airflow.svg" alt="Apache Airflow" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Airflow</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="1">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .14em; color: #8497A8; text-transform: uppercase" data-en="Warehouses &amp; databases">מחסני נתונים ובסיסי נתונים</span>
+            <span style="flex: 1; height: 1px; background: #E4EAF1"></span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px">
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv23">
+              <img src="assets/logos/snowflake.svg" alt="Snowflake" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Snowflake</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv24">
+              <img src="assets/logos/bigquery.svg" alt="Google BigQuery" style="width: 28px; height: 28px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">BigQuery</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv25">
+              <img src="assets/logos/sqlserver.svg" alt="Microsoft SQL Server" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">SQL Server</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal="1">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .14em; color: #8497A8; text-transform: uppercase" data-en="BI &amp; visualization">BI והצגת נתונים</span>
+            <span style="flex: 1; height: 1px; background: #E4EAF1"></span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px">
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv26">
+              <img src="assets/logos/powerbi.svg" alt="Microsoft Power BI" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Power BI</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv27">
+              <img src="assets/logos/tableau.svg" alt="Tableau" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Tableau</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv28">
+              <img src="assets/logos/looker.svg" alt="Looker" style="width: 26px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Looker</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; border: 1px solid #E4EAF1; border-radius: 16px; padding: 16px 18px; background: #fff" class="hv29">
+              <img src="assets/logos/excel.svg" alt="Microsoft Excel" style="width: 30px; height: 30px; object-fit: contain; flex: none" />
+              <span style="font-weight: 700; font-size: 16px">Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients" style="padding: 104px 0; background: #F4F7FA; border-top: 1px solid #E4EAF1; border-bottom: 1px solid #E4EAF1">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 44px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">04 — Clients</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="Organizations, businesses and nonprofits I work with">ארגונים, עסקים ועמותות שאני עובד איתם</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 620px" data-en="From government bodies and enterprises to small businesses and nonprofits that need their data organized without a data department.">מגופים ציבוריים וחברות גדולות ועד עסקים קטנים ועמותות שצריכים סדר בדאטה בלי מחלקת דאטה שלמה.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px">
+          <div style="height: 92px; border-radius: 12px; background: repeating-linear-gradient(135deg, #F1F5F9 0 8px, #E9EFF5 8px 16px); display: grid; place-items: center; margin-bottom: 20px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8497A8; letter-spacing: .08em">Tax Authority logo</span>
+          </div>
+          <div style="font-size: 19px; font-weight: 800" data-en="Israel Tax Authority (Shaam)">רשות המיסים ושע״ם</div>
+          <div style="font-size: 15px; color: #5C6F84" data-en="Data Engineer">מהנדס נתונים</div>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px">
+          <div style="height: 92px; border-radius: 12px; background: repeating-linear-gradient(135deg, #F1F5F9 0 8px, #E9EFF5 8px 16px); display: grid; place-items: center; margin-bottom: 20px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8497A8; letter-spacing: .08em">Matrix DNA logo</span>
+          </div>
+          <div style="font-size: 19px; font-weight: 800">Matrix DNA</div>
+          <div style="font-size: 15px; color: #5C6F84" data-en="BI development">פיתוח מערכות BI</div>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px">
+          <div style="height: 92px; border-radius: 12px; background: repeating-linear-gradient(135deg, #F1F5F9 0 8px, #E9EFF5 8px 16px); display: grid; place-items: center; margin-bottom: 20px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8497A8; letter-spacing: .08em">SNC logo</span>
+          </div>
+          <div style="font-size: 19px; font-weight: 800">SNC</div>
+          <div style="font-size: 15px; color: #5C6F84" data-en="Data infrastructure &amp; BI">תשתיות דאטה ו-BI</div>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px dashed #C9D7E4; border-radius: 20px; padding: 30px">
+          <div style="height: 92px; border-radius: 12px; background: #F7FAFD; display: grid; place-items: center; margin-bottom: 20px; color: #0A5F9C">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width: 30px; height: 30px"><path d="M3 21V8l6-4 6 4v13"></path><path d="M15 21V11l6 3v7"></path><path d="M7 21v-5h4v5"></path></svg>
+          </div>
+          <div style="font-size: 19px; font-weight: 800" data-en="Businesses &amp; nonprofits">עסקים ועמותות</div>
+          <div style="font-size: 15px; color: #5C6F84" data-en="Reporting, automation and ongoing data support">דוחות, אוטומציה וליווי דאטה שוטף</div>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="margin-top: 34px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 22px 26px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .14em; color: #8497A8; text-transform: uppercase" data-en="Professional training">הכשרה מקצועית</span>
+        <span style="width: 1px; height: 26px; background: #E4EAF1"></span>
+        <span style="display: flex; align-items: center; gap: 12px">
+          <span style="display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px">EX</span>
+          <span style="display: grid; line-height: 1.3">
+            <span style="font-weight: 700; font-size: 16.5px" data-en="Experis">אקספיריס (Experis)</span>
+            <span style="font-size: 14.5px; color: #5C6F84" data-en="Certified in the Experis data &amp; BI professional track">הוכשרתי במסלול הדאטה ו-BI המקצועי של אקספיריס</span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="position: relative; overflow: hidden; background: #07131F; color: #fff; padding: 100px 0 90px">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 74px 74px; mask-image: radial-gradient(ellipse 80% 70% at 40% 100%, #000 20%, transparent 76%)"></div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 64px; align-items: start">
+        <div data-reveal="1">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #2ED0FF; text-transform: uppercase">05 — Contact</span>
+          <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 14px" data-en="Let's talk about your data">בואו נדבר על הדאטה שלכם</h2>
+          <p style="color: #9FB6C9; font-size: 18px; margin: 0 0 34px; max-width: 460px" data-en="Send a short brief and I'll come back within one business day — usually with a few sharp questions first.">שלחו תיאור קצר ואחזור אליכם תוך יום עסקים — בדרך כלל עם כמה שאלות ממוקדות קודם.</p>
+          <div style="display: grid; gap: 12px">
+            <a href="mailto:ahmad-s-data@outloock.com" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #fff; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 16px 18px" class="hv30">
+              <span style="width: 38px; height: 38px; border-radius: 11px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width: 19px; height: 19px"><rect x="2.5" y="4.5" width="19" height="15" rx="3"></rect><path d="m3.5 6.5 8.5 6 8.5-6"></path></svg>
+              </span>
+              <span style="min-width: 0">
+                <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; color: #7FA3BC">EMAIL</span>
+                <span dir="ltr" style="display: block; font-weight: 700; font-size: 15.5px; overflow-wrap: anywhere">ahmad-s-data@outloock.com</span>
+              </span>
+            </a>
+            <a href="tel:+972528756806" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #fff; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 16px 18px" class="hv31">
+              <span style="width: 38px; height: 38px; border-radius: 11px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width: 19px; height: 19px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </span>
+              <span>
+                <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; color: #7FA3BC">PHONE</span>
+                <span dir="ltr" style="display: block; font-weight: 700; font-size: 15.5px">052-875-6806</span>
+              </span>
+            </a>
+            <a href="https://wa.me/972528756806?text=%D7%94%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%D7%9A" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #fff; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 16px 18px" class="hv32">
+              <span style="width: 38px; height: 38px; border-radius: 11px; flex: none; display: grid; place-items: center; background: rgba(37,211,102,.14); color: #25D366">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width: 19px; height: 19px"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.23 8.24z"></path></svg>
+              </span>
+              <span>
+                <span style="display: block; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .12em; color: #7FA3BC">WHATSAPP</span>
+                <span style="display: block; font-weight: 700; font-size: 15.5px" data-en="Send a message">שליחת הודעה</span>
+              </span>
+            </a>
+          </div>
+
+          <div id="cv" style="margin-top: 30px; background: rgba(46,208,255,.07); border: 1px solid rgba(46,208,255,.26); border-radius: 20px; padding: 26px">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px">
+              <span style="width: 34px; height: 34px; border-radius: 10px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.16); color: #2ED0FF">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg>
+              </span>
+              <h3 style="font-size: 20px; font-weight: 800; letter-spacing: -.02em; margin: 0" data-en="Request my CV">בקשת קורות חיים</h3>
+            </div>
+            <p style="margin: 0 0 18px; color: #9FB6C9; font-size: 15.5px" data-en="Leave your email and I'll send my CV over personally.">השאירו אימייל ואשלח לכם את קורות החיים שלי באופן אישי.</p>
+            <form id="cv-form" style="display: flex; gap: 10px; flex-wrap: wrap">
+              <input name="cvemail" type="email" dir="ltr" required="required" placeholder="you@company.com" style="flex: 1 1 190px; min-width: 0; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px" />
+              <button type="submit" style="flex: 0 0 auto; padding: 13px 24px; border-radius: 12px; border: none; font-weight: 700; font-size: 15.5px; cursor: pointer; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D" class="hv33" data-en="Send request">שליחת בקשה</button>
+            </form>
+            <p style="margin: 12px 0 0; font-size: 13px; color: #7FA3BC" data-en="The request is sent straight to my personal inbox and I reply with the CV.">הבקשה נשלחת ישירות לתיבה הפרטית שלי, ואני חוזר אליכם עם קורות החיים.</p>
+          </div>
+        </div>
+
+        <form data-reveal="1" id="project-form" style="background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.13); border-radius: 24px; padding: 32px">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+            <label style="display: grid; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="Full name">שם מלא</span>
+              <input name="name" required="required" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px" />
+            </label>
+            <label style="display: grid; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="Company">חברה / ארגון</span>
+              <input name="company" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px" />
+            </label>
+            <label style="display: grid; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="Email">אימייל</span>
+              <input name="email" type="email" dir="ltr" required="required" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px" />
+            </label>
+            <label style="display: grid; gap: 8px">
+              <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="Phone">טלפון</span>
+              <input name="phone" dir="ltr" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px" />
+            </label>
+          </div>
+          <label style="display: grid; gap: 8px; margin-top: 16px">
+            <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="What do you need?">מה אתם צריכים?</span>
+            <select name="topic" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px">
+              <option style="color: #0C1B2A" data-en="Warehouse / DWH">מחסן נתונים (DWH)</option>
+              <option style="color: #0C1B2A" data-en="ETL / ELT pipelines">תהליכי ETL / ELT</option>
+              <option style="color: #0C1B2A" data-en="BI system">מערכת BI</option>
+              <option style="color: #0C1B2A" data-en="BI / data application">אפליקציית BI או DATA</option>
+              <option style="color: #0C1B2A" data-en="AI agents">מערכת אייג׳נטים (AI)</option>
+              <option style="color: #0C1B2A" data-en="Dashboards &amp; reports">דשבורדים ודוחות</option>
+              <option style="color: #0C1B2A" data-en="Ongoing support">ליווי שוטף</option>
+              <option style="color: #0C1B2A" data-en="Something else">משהו אחר</option>
+            </select>
+          </label>
+          <label style="display: grid; gap: 8px; margin-top: 16px">
+            <span style="font-size: 14px; font-weight: 600; color: #C6D6E3" data-en="A few words about the project">כמה מילים על הפרויקט</span>
+            <textarea name="message" rows="4" style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16); border-radius: 12px; padding: 13px 14px; color: #fff; font-size: 15.5px; resize: vertical"></textarea>
+          </label>
+          <button type="submit" style="margin-top: 22px; width: 100%; padding: 15px 24px; border-radius: 999px; border: none; font-weight: 700; font-size: 16px; cursor: pointer; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D" class="hv34" data-en="Send">שליחה</button>
+          <p style="margin: 14px 0 0; font-size: 13px; color: #7FA3BC; text-align: center" data-en="Sends through your mail client — nothing is stored on this site.">הטופס נשלח דרך תוכנת הדואר שלכם. שום פרט לא נשמר באתר.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #050E17; color: #6C8BA6; padding: 30px 0 40px; border-top: 1px solid rgba(255,255,255,.07)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14.5px">
+      <span data-en="Ahmad Sarsor · Data Engineer &amp; BI Developer">אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</span>
+      <a href="mailto:ahmad-s-data@outloock.com" dir="ltr" style="color: #6C8BA6; text-decoration: none">ahmad-s-data@outloock.com</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.querySelectorAll('[data-reveal]').forEach(function (el, i) {
+  if (el.getBoundingClientRect().top > window.innerHeight * 1.05) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transitionDelay = (i % 3) * 70 + 'ms';
+  }
+});
+function show(el) {
+  el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1)';
+  el.style.opacity = '1';
+  el.style.transform = 'none';
+}
+function sweep() {
+  document.querySelectorAll('[data-reveal]').forEach(function (el) {
+    if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight) show(el);
+  });
+}
+window.addEventListener('scroll', sweep, { passive: true });
+window.addEventListener('resize', sweep);
+sweep();
+
+var root = document.getElementById('top');
+function isEn() { return root.getAttribute('dir') === 'ltr'; }
+document.getElementById('lang-toggle').addEventListener('click', function () {
+  var en = !isEn();
+  root.setAttribute('dir', en ? 'ltr' : 'rtl');
+  document.querySelectorAll('[data-en]').forEach(function (el) {
+    if (!el.dataset.he) el.dataset.he = el.innerHTML;
+    el.innerHTML = en ? el.dataset.en : el.dataset.he;
+  });
+  document.documentElement.lang = en ? 'en' : 'he';
+  document.getElementById('lang-label').textContent = en ? '\u05e2\u05d1' : 'EN';
+});
+
+document.getElementById('project-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(e.target), en = isEn();
+  var lines = [
+    (en ? 'Name: ' : '\u05e9\u05dd: ') + (f.get('name') || ''),
+    (en ? 'Company: ' : '\u05d7\u05d1\u05e8\u05d4: ') + (f.get('company') || ''),
+    (en ? 'Email: ' : '\u05d0\u05d9\u05de\u05d9\u05d9\u05dc: ') + (f.get('email') || ''),
+    (en ? 'Phone: ' : '\u05d8\u05dc\u05e4\u05d5\u05df: ') + (f.get('phone') || ''),
+    (en ? 'Need: ' : '\u05e0\u05d5\u05e9\u05d0: ') + (f.get('topic') || ''),
+    '', f.get('message') || ''
+  ];
+  var subject = (en ? 'Project inquiry from the website \u2014 ' : '\u05e4\u05e0\u05d9\u05d9\u05d4 \u05de\u05d4\u05d0\u05ea\u05e8 \u2014 ') + (f.get('name') || '');
+  window.location.href = 'mailto:ahmad-s-data@outloock.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+});
+
+document.getElementById('cv-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = new FormData(e.target), en = isEn();
+  var email = f.get('cvemail') || '';
+  var subject = en ? 'CV request from the website' : '\u05d1\u05e7\u05e9\u05ea \u05e7\u05d5\u05e8\u05d5\u05ea \u05d7\u05d9\u05d9\u05dd \u05de\u05d4\u05d0\u05ea\u05e8';
+  var body = [
+    en ? 'A CV request came in from the website.' : '\u05d4\u05ea\u05e7\u05d1\u05dc\u05d4 \u05d1\u05e7\u05e9\u05d4 \u05dc\u05e7\u05d5\u05e8\u05d5\u05ea \u05d7\u05d9\u05d9\u05dd \u05de\u05d4\u05d0\u05ea\u05e8.',
+    '',
+    (en ? 'Send the CV to: ' : '\u05dc\u05e9\u05dc\u05d5\u05d7 \u05d0\u05ea \u05e7\u05d5\u05e8\u05d5\u05ea \u05d4\u05d7\u05d9\u05d9\u05dd \u05dc: ') + email
+  ].join('\n');
+  window.location.href = 'mailto:ahmad.kefah11sar@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
