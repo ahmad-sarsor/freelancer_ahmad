@@ -52,20 +52,6 @@
     .svc-grid > article:last-child { grid-column: 1 / -1; }
   }
   @media (max-width: 620px) { .svc-grid { grid-template-columns: minmax(0, 1fr); } }
-  /* 5 process steps as one connected block: 3 on top, 2 wider below, both rows full width */
-  .proc-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; }
-  .proc-grid > div { grid-column: span 2; }
-  .proc-grid > div:nth-child(4), .proc-grid > div:nth-child(5) { grid-column: span 3; }
-  .proc-grid > div:not(:nth-child(4)):hover { background: #F7FAFD; }
-  @media (max-width: 940px) {
-    .proc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .proc-grid > div, .proc-grid > div:nth-child(4) { grid-column: span 1; }
-    .proc-grid > div:nth-child(5) { grid-column: 1 / -1; }
-  }
-  @media (max-width: 620px) {
-    .proc-grid { grid-template-columns: minmax(0, 1fr); }
-    .proc-grid > div, .proc-grid > div:nth-child(4), .proc-grid > div:nth-child(5) { grid-column: 1 / -1; }
-  }
   body { margin: 0; background: #07131F; }
   a { color: #0A5F9C; }
   a:hover { color: #17A9EA; }
@@ -269,28 +255,28 @@
         <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="How we work together">איך עובדים יחד</h2>
         <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 620px; text-wrap: pretty" data-en="No fixed packages — the scope is built around what you actually need. What is fixed is the order of the work: you see the design and the plan before anything gets built.">אין חבילות קבועות — ההיקף נבנה סביב מה שאתם באמת צריכים. מה שכן קבוע זה סדר העבודה: אתם רואים את התכנון ואת התוכנית לפני שנבנה משהו.</p>
       </div>
-      <div class="proc-grid" style="background: #E4EAF1; border: 1px solid #E4EAF1; border-radius: 22px; overflow: hidden">
-        <div data-reveal="1" style="background: #fff; padding: 32px 28px 36px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
           <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">01</span>
           <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Discovery call">שיחת אפיון</h3>
           <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="What questions the business needs answered, which systems hold the data, and who will use the result.">אילו שאלות הארגון צריך לענות עליהן, באילו מערכות הדאטה יושב, ומי ישתמש בתוצאה.</p>
         </div>
-        <div data-reveal="1" style="background: #fff; padding: 32px 28px 36px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
           <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">02</span>
           <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="ERD &amp; diagrams">ERD ודיאגרמות</h3>
           <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="A full ERD and architecture diagram of the target structure, reviewed with you before development starts.">דיאגרמת ERD ודיאגרמת ארכיטקטורה של המבנה המתוכנן, שעוברות איתכם עוד לפני תחילת הפיתוח.</p>
         </div>
-        <div data-reveal="1" style="background: #fff; padding: 32px 28px 36px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
           <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">03</span>
           <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Work plan">תוכנית עבודה</h3>
           <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="Phases, deliverables and timeline in writing — including what is deliberately left out of the first phase.">שלבים, תוצרים ולוחות זמנים בכתב — כולל מה שבמכוון נשאר מחוץ לשלב הראשון.</p>
         </div>
-        <div data-reveal="1" style="background: #07131F; color: #fff; padding: 32px 28px 36px">
+        <div data-reveal="1" style="background: #07131F; color: #fff; border: 1px solid #07131F; border-radius: 20px; padding: 30px 26px 32px; box-shadow: 0 40px 70px -40px rgba(7,19,31,.7)">
           <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(46,208,255,.16); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">04</span>
           <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="See the DWH before it's built">רואים את ה-DWH לפני הפיתוח</h3>
           <p style="margin: 0; color: #9FB6C9; font-size: 15.5px; line-height: 1.7" data-en="A walkthrough of the planned warehouse — layers, tables, keys and metrics — with sample data, so nothing is a surprise at the end.">סקירה של מחסן הנתונים המתוכנן — שכבות, טבלאות, מפתחות ומדדים — עם נתוני דוגמה, כך שאף דבר לא מפתיע בסוף.</p>
         </div>
-        <div data-reveal="1" style="background: #fff; padding: 32px 28px 36px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px 26px 32px">
           <span style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 14px; margin-bottom: 18px">05</span>
           <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 8px" data-en="Build, handover &amp; support">פיתוח, מסירה וליווי</h3>
           <p style="margin: 0; color: #5C6F84; font-size: 15.5px; line-height: 1.7" data-en="Development in short iterations, documentation, knowledge transfer to the team, and ongoing support as needed.">פיתוח באיטרציות קצרות, תיעוד, העברת ידע לצוות, וליווי שוטף לפי הצורך.</p>
