@@ -68,6 +68,7 @@
       </a>
       <nav style="display: flex; gap: 26px; align-items: center; flex-wrap: wrap">
         <a href="#services" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv0" data-en="Services">שירותים</a>
+        <a href="agents.html" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv1" data-en="AI agents">אייג׳נטים</a>
         <a href="#process" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv1" data-en="Process">תהליך העבודה</a>
         <a href="#tech" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv2" data-en="Stack">כלים</a>
         <a href="#clients" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="hv3" data-en="Clients">לקוחות</a>
@@ -217,6 +218,7 @@
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">06</span>
           <h3 style="font-size: 21px; font-weight: 700; letter-spacing: -.015em; margin: 16px 0 10px" data-en="AI agent systems">פיתוח מערכות אייג׳נטים (AI Agents)</h3>
           <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Agents that work on your data: answering business questions in natural language, monitoring anomalies, and running routine data tasks end to end.">אייג׳נטים שעובדים על הדאטה שלכם: מענה לשאלות עסקיות בשפה חופשית, ניטור חריגות, והרצה של משימות דאטה שגרתיות מקצה לקצה.</p>
+          <a href="agents.html" style="display: inline-flex; align-items: center; gap: 7px; margin-top: 16px; font-size: 15px; font-weight: 700; color: #0A5F9C; text-decoration: none" data-en="How an agent works &rsaquo;">איך אייג׳נט עובד &rsaquo;</a>
         </article>
         <article data-reveal="1" style="background: #fff; padding: 38px 32px 42px" class="hv15">
           <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">07</span>
@@ -547,8 +549,8 @@ sweep();
 
 var root = document.getElementById('top');
 function isEn() { return root.getAttribute('dir') === 'ltr'; }
-document.getElementById('lang-toggle').addEventListener('click', function () {
-  var en = !isEn();
+/* the chosen language has to survive the jump between index.html and agents.html */
+function applyLang(en) {
   root.setAttribute('dir', en ? 'ltr' : 'rtl');
   document.querySelectorAll('[data-en]').forEach(function (el) {
     if (!el.dataset.he) el.dataset.he = el.innerHTML;
@@ -560,7 +562,10 @@ document.getElementById('lang-toggle').addEventListener('click', function () {
   });
   document.documentElement.lang = en ? 'en' : 'he';
   document.getElementById('lang-label').textContent = en ? '\u05e2\u05d1' : 'EN';
-});
+  try { localStorage.setItem('as-lang', en ? 'en' : 'he'); } catch (err) {}
+}
+document.getElementById('lang-toggle').addEventListener('click', function () { applyLang(!isEn()); });
+try { if (localStorage.getItem('as-lang') === 'en') applyLang(true); } catch (err) {}
 
 /* Contact forms: delivered by email through the same service the Data Clinic site uses.
    Every <form data-contact> holds a .cf-ok banner, a .cf-bad banner, a submit button

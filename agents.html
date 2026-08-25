@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>אייג׳נטים על הדאטה שלכם · אחמד סרסור</title>
+<meta name="description" content="בניית אייג׳נטים שעונים על שאלות עסקיות בשפה חופשית מעל מחסן הנתונים שלכם, עם ציון המקור לכל תשובה. מה נדרש לפני שמתחילים, איפה זה נשבר ואיך שומרים שהתשובות יישארו נכונות.">
+<link rel="canonical" href="https://ahmad-sarsor.github.io/freelancer_ahmad/agents.html">
+<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ahmad-sarsor.github.io/freelancer_ahmad/agents.html">
+<meta property="og:title" content="אייג׳נטים על הדאטה שלכם · אחמד סרסור">
+<meta property="og:description" content="אייג׳נט שעונה על שאלות עסקיות בשפה חופשית מעל מחסן הנתונים שלכם, עם ציון המקור לכל תשובה.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#07131F">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+.ag0:hover { color: #fff !important }
+.ag1:hover { background: rgba(255,255,255,.14) !important }
+.ag2:hover { background: #2ED0FF !important }
+.ag3:hover { transform: translateY(-2px) !important }
+.ag4:hover { background: rgba(255,255,255,.13) !important }
+.ag5:hover { background: #F7FAFD !important }
+.ag6:hover { border-color: #BFD6E8 !important; transform: translateY(-3px) !important; box-shadow: 0 18px 34px -22px rgba(12,27,42,.4) !important }
+.ag7:hover { background: rgba(255,255,255,.11) !important }
+  body { margin: 0; background: #07131F; }
+  a { color: #0A5F9C; }
+  a:hover { color: #17A9EA; }
+  input, textarea, select, button { font: inherit; }
+  input:focus, textarea:focus, select:focus { outline: 2px solid #17A9EA; outline-offset: 2px; }
+  @keyframes pulse { 0%,100% { opacity: .35; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+  @keyframes blink { 0%, 60%, 100% { opacity: .25; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }
+  @keyframes sheen { 0% { transform: translateX(-120%); } 100% { transform: translateX(320%); } }
+</style>
+</head>
+<body>
+<div id="top" dir="rtl" style="font-family: 'Assistant', 'Segoe UI', sans-serif; font-size: 17px; line-height: 1.7; color: #0C1B2A; background: #FFFFFF; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 40; background: rgba(7,19,31,.72); backdrop-filter: saturate(150%) blur(14px); border-bottom: 1px solid rgba(255,255,255,.08)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 14px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff">
+        <span style="width: 34px; height: 34px; border-radius: 10px; flex: none; display: grid; place-items: center; background: linear-gradient(140deg, #2ED0FF, #0A5F9C); color: #04121D; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; letter-spacing: .02em">AS</span>
+        <span style="display: grid; line-height: 1.25">
+          <span style="font-weight: 700; font-size: 16px; color: #fff" data-en="Ahmad Sarsor">אחמד סרסור</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .14em; color: #6C8BA6; text-transform: uppercase">Data &amp; BI</span>
+        </span>
+      </a>
+      <nav style="display: flex; gap: 26px; align-items: center; flex-wrap: wrap">
+        <a href="index.html#services" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="ag0" data-en="Services">שירותים</a>
+        <a href="agents.html" aria-current="page" style="color: #2ED0FF; text-decoration: none; font-size: 15px; font-weight: 600" data-en="AI agents">אייג׳נטים</a>
+        <a href="index.html#process" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="ag0" data-en="Process">תהליך העבודה</a>
+        <a href="index.html#tech" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="ag0" data-en="Stack">כלים</a>
+        <a href="index.html#clients" style="color: #A9BED0; text-decoration: none; font-size: 15px; font-weight: 600" class="ag0" data-en="Clients">לקוחות</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <button type="button" id="lang-toggle" style="display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); color: #DCE7F0; border-radius: 999px; padding: 7px 13px; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .08em" class="ag1">
+          <span id="lang-label">EN</span>
+        </button>
+        <a href="index.html#contact" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; background: #fff; color: #07131F" class="ag2" data-en="Let's talk">דברו איתי</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section style="position: relative; overflow: hidden; background: #07131F; color: #fff; padding: 84px 0 96px">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 74px 74px; mask-image: radial-gradient(ellipse 90% 70% at 60% 0%, #000 30%, transparent 78%)"></div>
+    <div style="position: absolute; width: 760px; height: 760px; border-radius: 50%; inset-inline-start: -240px; top: -420px; background: radial-gradient(circle, rgba(46,208,255,.22), transparent 62%)"></div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2">
+
+      <nav aria-label="breadcrumb" style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .1em; color: #6C8BA6; margin-bottom: 26px">
+        <a href="index.html" style="color: #7FA3BC; text-decoration: none" class="ag0" data-en="Home">בית</a>
+        <span style="color: #22384A">/</span>
+        <span style="color: #A9BED0" data-en="AI agents">אייג׳נטים</span>
+      </nav>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 60px; align-items: center">
+        <div>
+          <span style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(46,208,255,.34); background: rgba(46,208,255,.09); color: #7FDDFF; border-radius: 999px; padding: 6px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .08em">
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #2ED0FF; animation: pulse 2.4s ease-in-out infinite"></span>
+            <span>AI AGENTS</span>
+          </span>
+          <h1 style="font-size: clamp(34px, 5vw, 58px); line-height: 1.07; letter-spacing: -.03em; font-weight: 800; margin: 22px 0 0; text-wrap: pretty" data-en="Ask in plain language. Get an answer with its source.">שואלים בשפה חופשית, ומקבלים תשובה עם המקור שלה.</h1>
+          <p style="font-size: 19.5px; color: #9FB6C9; max-width: 560px; margin: 22px 0 0; text-wrap: pretty" data-en="I build agents that sit on top of your warehouse, translate a business question into a query against your own model, and answer with the table, the time window and the metric definition they used.">אני בונה אייג׳נטים שיושבים מעל מחסן הנתונים שלכם, מתרגמים שאלה עסקית לשאילתה מול המודל שלכם, ומחזירים תשובה יחד עם הטבלה, חלון הזמן והגדרת המדד ששימשו אותה.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 0">
+            <a href="index.html#contact" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D; box-shadow: 0 18px 40px -18px rgba(46,208,255,.9)" class="ag3" data-en="Check if you're ready">בדקו אם אתם מוכנים</a>
+            <a href="https://wa.me/972528756806?text=%D7%94%D7%99%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%A9%D7%9C%D7%9A" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.2)" class="ag4">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="#25D366" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.24 8.24 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.25-8.23a8.2 8.2 0 0 1 5.82 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.23 8.24z"></path><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"></path></svg>
+              <span data-en="WhatsApp">וואטסאפ</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CHAT MOCK -->
+        <div>
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #6C8BA6; margin: 0 0 12px; text-transform: uppercase" data-en="Illustration. Sample data, not a client's.">הדגמה. נתוני דוגמה בלבד, לא נתונים של לקוח.</p>
+          <div style="background: linear-gradient(160deg, rgba(255,255,255,.09), rgba(255,255,255,.03)); border: 1px solid rgba(255,255,255,.13); border-radius: 24px; overflow: hidden; box-shadow: 0 50px 90px -40px rgba(0,0,0,.85)">
+
+            <div style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,.09); background: rgba(255,255,255,.03)">
+              <span style="display: flex; gap: 6px">
+                <i style="width: 9px; height: 9px; border-radius: 50%; background: #2C4256; display: block"></i>
+                <i style="width: 9px; height: 9px; border-radius: 50%; background: #2C4256; display: block"></i>
+                <i style="width: 9px; height: 9px; border-radius: 50%; background: #2C4256; display: block"></i>
+              </span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #7FA3BC; flex: 1" data-en="DATA CHAT">שיחת נתונים</span>
+              <span style="display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #7BE3B0">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background: #35D07F"></span>
+                <span data-en="CONNECTED">מחובר</span>
+              </span>
+            </div>
+
+            <div style="padding: 20px 18px 18px; display: grid; gap: 14px">
+
+              <div style="justify-self: start; max-width: 82%; background: rgba(46,208,255,.14); border: 1px solid rgba(46,208,255,.28); color: #EAF7FF; border-radius: 16px 16px 16px 5px; padding: 11px 15px; font-size: 15.5px" data-en="Why did churn jump last week?">למה הנטישה קפצה בשבוע שעבר?</div>
+
+              <div style="justify-self: end; max-width: 92%; display: flex; gap: 10px; align-items: flex-start">
+                <span style="width: 28px; height: 28px; border-radius: 9px; flex: none; display: grid; place-items: center; background: linear-gradient(140deg, #2ED0FF, #0A5F9C); color: #04121D; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px">AI</span>
+                <div style="background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px 16px 5px 16px; padding: 13px 15px; font-size: 15.5px; color: #DCE7F0">
+                  <span data-en="Weekly churn moved from 2.1% to 3.4%. The increase is concentrated in annual SMB accounts on the Legacy Pro plan.">נטישה שבועית עלתה מ-2.1% ל-3.4%. הגידול מרוכז בלקוחות SMB שנתיים בתוכנית Legacy Pro.</span>
+                  <div style="margin-top: 12px; background: rgba(4,18,29,.5); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; overflow: hidden">
+                    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 14px">
+                      <span style="color: #8FA9BF" data-en="Plan">תוכנית</span><b style="color: #EAF3F9">Legacy Pro</b>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 14px">
+                      <span style="color: #8FA9BF" data-en="Segment">סגמנט</span><b style="color: #EAF3F9" data-en="SMB · annual">SMB · שנתי</b>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 14px">
+                      <span style="color: #8FA9BF" data-en="Left this week">עזבו השבוע</span><b style="color: #FFB3B3" data-en="42 accounts">42 חשבונות</b>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; gap: 12px; padding: 9px 13px; font-size: 14px">
+                      <span style="color: #8FA9BF" data-en="Top reason">סיבה עיקרית</span><b style="color: #EAF3F9" data-en="&quot;Price increase&quot;">"העלאת מחיר"</b>
+                    </div>
+                  </div>
+                  <div dir="ltr" style="margin-top: 11px; display: flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #7FA3BC; text-align: left">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width: 13px; height: 13px; flex: none" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"></path><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"></path></svg>
+                    <span>fct_subscription_events · 7d window</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="justify-self: end; display: flex; gap: 10px; align-items: center">
+                <span style="width: 28px; height: 28px; border-radius: 9px; flex: none; display: grid; place-items: center; background: rgba(46,208,255,.14); color: #2ED0FF; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 10px">AI</span>
+                <span style="display: inline-flex; gap: 5px; align-items: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 11px 15px">
+                  <i style="width: 6px; height: 6px; border-radius: 50%; background: #2ED0FF; display: block; animation: blink 1.4s ease-in-out infinite"></i>
+                  <i style="width: 6px; height: 6px; border-radius: 50%; background: #2ED0FF; display: block; animation: blink 1.4s ease-in-out .2s infinite"></i>
+                  <i style="width: 6px; height: 6px; border-radius: 50%; background: #2ED0FF; display: block; animation: blink 1.4s ease-in-out .4s infinite"></i>
+                </span>
+              </div>
+
+              <div style="display: flex; gap: 9px; align-items: center; margin-top: 4px; background: rgba(4,18,29,.45); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 11px 14px">
+                <span style="flex: 1; font-size: 14.5px; color: #55707F" data-en="Ask anything about your data...">שאלו כל שאלה על הנתונים...</span>
+                <span style="width: 30px; height: 30px; border-radius: 9px; flex: none; display: grid; place-items: center; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 · WHEN NOT TO -->
+  <section style="padding: 92px 0; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="position: relative; border: 1px solid #E4EAF1; border-radius: 24px; background: linear-gradient(180deg, #FBFDFE, #F4F7FA); padding: 44px 40px; overflow: hidden">
+        <span style="position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px; background: linear-gradient(#2ED0FF, #0A5F9C)"></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">01 · Reality check</span>
+        <h2 style="font-size: clamp(28px, 3.8vw, 40px); line-height: 1.12; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 18px; max-width: 720px" data-en="When I will tell you not to build an agent">מתי אני אגיד לכם לא לבנות אייג׳נט</h2>
+        <p style="color: #44586C; margin: 0 0 16px; font-size: 18px; max-width: 780px; text-wrap: pretty" data-en="If your data isn't modelled, an agent will produce answers that sound confident and are wrong. It will not say &quot;I don't know&quot;. It will guess a join between two tables and hand you the result in a convincing sentence.">אם הנתונים שלכם לא ממודלים, האייג׳נט ייתן תשובות שנשמעות בטוחות והן שגויות. הוא לא יגיד "אני לא יודע", הוא ינחש חיבור בין טבלאות ויגיש לכם את התוצאה במשפט משכנע.</p>
+        <p style="color: #44586C; margin: 0; font-size: 18px; max-width: 780px; text-wrap: pretty" data-en="An agent on messy data is not a shortcut past the groundwork. It is a second problem layered on the first one, and harder to spot. So in many cases my answer is to build the foundation first and talk about an agent after. Less impressive, and it is what works.">אייג׳נט על נתונים לא מסודרים הוא לא קיצור דרך שמדלג על העבודה הבסיסית. הוא בעיה שנייה שמונחת על הראשונה, וקשה יותר לזהות אותה. לכן בהרבה מקרים התשובה שלי היא לבנות קודם את הבסיס, ורק אחר כך לדבר על אייג׳נט. זה פחות מרשים, וזה מה שעובד.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 · HOW IT WORKS -->
+  <section style="padding: 0 0 96px; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 44px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">02 · How it works</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="What actually happens between the question and the answer">מה באמת קורה בין השאלה לתשובה</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 640px; text-wrap: pretty" data-en="Three steps. The third one is what separates a tool you can rely on from a chat that sounds smart.">שלושה שלבים. השלישי הוא מה שמפריד בין כלי שאפשר לסמוך עליו לבין צ׳אט שנשמע חכם.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; transition: border-color .25s, transform .25s, box-shadow .25s" class="ag6">
+          <span style="display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; margin-bottom: 18px">01</span>
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="The question, in plain Hebrew">השאלה, בעברית רגילה</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="A business user asks the way they'd ask a colleague. No SQL, no report request, no waiting in a queue.">משתמש עסקי שואל בדיוק כמו שהיה שואל עמית לעבודה. בלי SQL, בלי בקשת דוח, בלי להמתין בתור.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; transition: border-color .25s, transform .25s, box-shadow .25s" class="ag6">
+          <span style="display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: #EAF4FB; color: #0A5F9C; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; margin-bottom: 18px">02</span>
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="Translation against your model">תרגום מול המודל שלכם</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="The agent maps the question onto the semantic layer: your tables, your relationships, your metric definitions. It runs the query inside your environment.">האייג׳נט ממפה את השאלה לשכבה הסמנטית: הטבלאות שלכם, הקשרים שלכם, הגדרות המדדים שלכם. השאילתה רצה בתוך הסביבה שלכם.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; transition: border-color .25s, transform .25s, box-shadow .25s" class="ag6">
+          <span style="display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: linear-gradient(140deg, #2ED0FF, #0A5F9C); color: #04121D; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px; margin-bottom: 18px">03</span>
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="The answer, with its receipt">התשובה, עם הקבלה שלה</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Every answer names the table, the time window and the metric definition behind it. An answer without a source is an opinion.">כל תשובה מציינת את הטבלה, חלון הזמן והגדרת המדד שמאחוריה. תשובה בלי מקור היא דעה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · PREREQUISITES -->
+  <section style="padding: 96px 0; background: #F4F7FA; border-top: 1px solid #E4EAF1; border-bottom: 1px solid #E4EAF1">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 44px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">03 · Prerequisites</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="What has to be in place before we start">מה חייב להתקיים לפני שמתחילים</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 640px; text-wrap: pretty" data-en="If one of these is missing, that is the project. Not the agent.">אם אחד מהם חסר, הוא הפרויקט. לא האייג׳נט.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: #E4EAF1; border: 1px solid #E4EAF1; border-radius: 22px; overflow: hidden">
+        <article data-reveal="1" style="background: #fff; padding: 34px 30px 38px" class="ag5">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">01</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 14px 0 9px" data-en="A warehouse">מחסן נתונים</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="One place where the data sits in a stable shape. Not a live query straight into the operational systems.">מקום אחד שבו הנתונים יושבים בצורה יציבה. לא שליפה ישירה מהמערכות התפעוליות.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 34px 30px 38px" class="ag5">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">02</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 14px 0 9px" data-en="Agreed metric definitions">הגדרות מדדים מוסכמות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="If revenue is calculated one way in marketing and another in finance, the agent will pick one of them and will not mention that it did.">אם "הכנסה" מחושבת אחרת בשיווק ובכספים, האייג׳נט יבחר אחת מהן ולא יטרח לספר לכם.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 34px 30px 38px" class="ag5">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">03</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 14px 0 9px" data-en="A semantic layer">שכבה סמנטית</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="An explicit description of the tables, the relationships and the metrics, so the agent reads instead of guessing.">תיאור מפורש של הטבלאות, הקשרים והמדדים, כדי שהאייג׳נט יקרא במקום לנחש.</p>
+        </article>
+        <article data-reveal="1" style="background: #fff; padding: 34px 30px 38px" class="ag5">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A7B7C6">04</span>
+          <h3 style="font-size: 19px; font-weight: 700; letter-spacing: -.015em; margin: 14px 0 9px" data-en="Permissions">הרשאות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Who is allowed to see what. An agent that skips this turns every innocent question into a potential data leak.">מי רשאי לראות מה. אייג׳נט שמדלג על זה הופך כל שאלה תמימה לדליפת מידע פוטנציאלית.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · WHERE IT BREAKS -->
+  <section style="padding: 96px 0; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 44px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">04 · Failure modes</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="Where it breaks">איפה זה נשבר</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 640px; text-wrap: pretty" data-en="Three recurring failures. None of them is solved by picking a different model. All three live in the data layer underneath.">שלוש נקודות כשל חוזרות. אף אחת מהן לא נפתרת בבחירת מודל אחר. כולן יושבות בשכבת הנתונים שמתחת.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px">
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; border-top: 3px solid #F2A65A">
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="Vague definitions">הגדרות עמומות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="&quot;How many active customers do we have&quot; is meaningless until somebody decides what active means. The agent will decide for you, silently.">"כמה לקוחות פעילים יש לנו" היא שאלה חסרת משמעות עד שמישהו קובע מה זה פעיל. האייג׳נט יחליט במקומכם, בשקט.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; border-top: 3px solid #E5736F">
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="Guessed joins">חיבורים שנוחשו</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="When the model guesses how two tables connect, the result looks reasonable and the number itself gives nothing away. This is the expensive one.">כשהמודל מנחש איך שתי טבלאות מתחברות, התוצאה נראית סבירה ואי אפשר לזהות את הטעות מהמספר עצמו. זו היקרה מכולן.</p>
+        </div>
+        <div data-reveal="1" style="background: #fff; border: 1px solid #E4EAF1; border-radius: 20px; padding: 30px; border-top: 3px solid #9B8AE6">
+          <h3 style="font-size: 19px; font-weight: 800; letter-spacing: -.015em; margin: 0 0 9px" data-en="Leaky permissions">הרשאות דולפות</h3>
+          <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="A user asks an innocent question and gets back a figure they were never meant to see. Permissions have to be enforced at the query, not at the phrasing.">משתמש שואל שאלה תמימה ומקבל נתון שלא היה אמור לראות. הרשאות נאכפות ברמת השאילתה, לא ברמת הניסוח של השאלה.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · STAYING CORRECT -->
+  <section style="padding: 96px 0; background: #F4F7FA; border-top: 1px solid #E4EAF1; border-bottom: 1px solid #E4EAF1">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="margin-bottom: 44px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">05 · Staying correct</span>
+        <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 12px" data-en="How the answers stay right over time">איך התשובות נשארות נכונות לאורך זמן</h2>
+        <p style="color: #5C6F84; margin: 0; font-size: 18px; max-width: 640px; text-wrap: pretty" data-en="An agent that was accurate at launch and drifted for six months is worse than no agent, because people have already started trusting it.">אייג׳נט שהיה מדויק בהשקה וסטה במשך חצי שנה גרוע יותר מלא לבנות אייג׳נט, כי בינתיים אנשים כבר התחילו לסמוך עליו.</p>
+      </div>
+      <div style="display: grid; gap: 14px">
+        <div data-reveal="1" style="display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid #E4EAF1; border-radius: 18px; padding: 26px 28px">
+          <span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; flex: none; background: #EAF4FB; color: #0A5F9C">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+          </span>
+          <div>
+            <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px" data-en="Anchored to the definitions">עיגון בהגדרות</h3>
+            <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="The agent uses the metrics defined in the model. It does not invent a calculation of its own.">האייג׳נט משתמש במדדים המוגדרים במודל. הוא לא ממציא חישוב משלו.</p>
+          </div>
+        </div>
+        <div data-reveal="1" style="display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid #E4EAF1; border-radius: 18px; padding: 26px 28px">
+          <span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; flex: none; background: #EAF4FB; color: #0A5F9C">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 13h6M9 17h4"></path></svg>
+          </span>
+          <div>
+            <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px" data-en="Sources on every answer">ציטוט מקורות</h3>
+            <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Every answer states where it came from, so anyone can check it instead of taking it on faith.">כל תשובה מציינת מאיפה הגיעה, כך שאפשר לבדוק אותה במקום להאמין לה.</p>
+          </div>
+        </div>
+        <div data-reveal="1" style="display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid #E4EAF1; border-radius: 18px; padding: 26px 28px">
+          <span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; flex: none; background: #EAF4FB; color: #0A5F9C">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          </span>
+          <div>
+            <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px" data-en="A regression test set">סט בדיקות</h3>
+            <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="A collection of questions with known answers that runs after every change to the model, so drift gets caught before a user does.">אוסף שאלות עם תשובות ידועות שרץ אחרי כל שינוי במודל, כדי לתפוס סטייה לפני שמשתמש תופס אותה.</p>
+          </div>
+        </div>
+        <div data-reveal="1" style="display: flex; gap: 18px; align-items: flex-start; background: #fff; border: 1px solid #E4EAF1; border-radius: 18px; padding: 26px 28px">
+          <span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; flex: none; background: #EAF4FB; color: #0A5F9C">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M4.9 4.9l14.2 14.2"></path></svg>
+          </span>
+          <div>
+            <h3 style="font-size: 18px; font-weight: 800; margin: 0 0 6px" data-en="Explicit boundaries">גבולות ברורים</h3>
+            <p style="margin: 0; color: #5C6F84; font-size: 16px; line-height: 1.7" data-en="Questions the agent should not answer come back as &quot;I don't have that&quot;, not as a guess dressed up as a number.">שאלות שהאייג׳נט לא אמור לענות עליהן חוזרות כ"אין לי את זה", ולא כניחוש שמחופש למספר.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 · SECURITY -->
+  <section style="padding: 96px 0; background: #fff">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px">
+      <div data-reveal="1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: start">
+        <div>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .16em; color: #0A5F9C; text-transform: uppercase">06 · Security</span>
+          <h2 style="font-size: clamp(30px, 4.2vw, 44px); line-height: 1.1; letter-spacing: -.025em; font-weight: 800; margin: 14px 0 0" data-en="Security and access">אבטחה וגישה</h2>
+        </div>
+        <div>
+          <p style="color: #44586C; margin: 0 0 16px; font-size: 18px; text-wrap: pretty" data-en="The work happens inside your own cloud, with read permissions limited to defined schemas. Your raw data stays in your environment.">העבודה מתבצעת בתוך הענן שלכם, עם הרשאות קריאה מוגבלות לסכמות מוגדרות. הנתונים הגולמיים נשארים בסביבה שלכם.</p>
+          <p style="color: #44586C; margin: 0; font-size: 18px; text-wrap: pretty" data-en="A user's permissions are enforced at the query level, not at the level of how the question was phrased. Rewording a question does not widen what someone is allowed to see.">ההרשאות של המשתמש נאכפות ברמת השאילתה, לא ברמת הניסוח של השאלה. ניסוח מחדש של שאלה לא מרחיב את מה שמישהו רשאי לראות.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="position: relative; overflow: hidden; background: #07131F; color: #fff; padding: 92px 0">
+    <div style="position: absolute; width: 620px; height: 620px; border-radius: 50%; inset-inline-end: -220px; bottom: -340px; background: radial-gradient(circle, rgba(46,208,255,.2), transparent 62%)"></div>
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 2; text-align: center">
+      <h2 style="font-size: clamp(28px, 4vw, 42px); line-height: 1.12; letter-spacing: -.025em; font-weight: 800; margin: 0 auto 16px; max-width: 640px; text-wrap: pretty" data-en="Want to know whether you're ready for an agent?">רוצים לדעת אם אתם מוכנים לאייג׳נט?</h2>
+      <p style="color: #9FB6C9; font-size: 18.5px; margin: 0 auto 32px; max-width: 620px; text-wrap: pretty" data-en="Send me a short description of your systems and metrics. I'll tell you honestly whether this is the right move now, or what needs to happen first.">שלחו לי תיאור קצר של המערכות והמדדים שלכם. אני אגיד לכם בכנות אם זה הצעד הנכון עכשיו, או מה צריך לקרות קודם.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center">
+        <a href="index.html#contact" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 30px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: linear-gradient(140deg, #2ED0FF, #0B84C9); color: #04121D; box-shadow: 0 18px 40px -18px rgba(46,208,255,.9)" class="ag3" data-en="Start a conversation">בואו נדבר</a>
+        <a href="tel:+972528756806" dir="ltr" style="display: inline-flex; align-items: center; gap: 9px; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; text-decoration: none; background: rgba(255,255,255,.06); color: #fff; border: 1px solid rgba(255,255,255,.2)" class="ag4">052-875-6806</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #050E17; color: #6C8BA6; padding: 30px 0 40px; border-top: 1px solid rgba(255,255,255,.07)">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14.5px">
+      <span data-en="Ahmad Sarsor · Data Engineer &amp; BI Developer">אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</span>
+      <a href="mailto:ahmad-s-data@outlook.com" dir="ltr" style="color: #6C8BA6; text-decoration: none">ahmad-s-data@outlook.com</a>
+    </div>
+  </footer>
+</div>
+<script>
+document.querySelectorAll('[data-reveal]').forEach(function (el, i) {
+  if (el.getBoundingClientRect().top > window.innerHeight * 1.05) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transitionDelay = (i % 3) * 70 + 'ms';
+  }
+});
+function show(el) {
+  el.style.transition = 'opacity .7s ease, transform .7s cubic-bezier(.2,.7,.3,1)';
+  el.style.opacity = '1';
+  el.style.transform = 'none';
+}
+function sweep() {
+  document.querySelectorAll('[data-reveal]').forEach(function (el) {
+    if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight) show(el);
+  });
+}
+window.addEventListener('scroll', sweep, { passive: true });
+window.addEventListener('resize', sweep);
+sweep();
+
+var root = document.getElementById('top');
+function isEn() { return root.getAttribute('dir') === 'ltr'; }
+/* the chosen language has to survive the jump between index.html and agents.html */
+function applyLang(en) {
+  root.setAttribute('dir', en ? 'ltr' : 'rtl');
+  document.querySelectorAll('[data-en]').forEach(function (el) {
+    if (!el.dataset.he) el.dataset.he = el.innerHTML;
+    el.innerHTML = en ? el.dataset.en : el.dataset.he;
+  });
+  document.querySelectorAll('[data-en-aria]').forEach(function (el) {
+    if (!el.dataset.heAria) el.dataset.heAria = el.getAttribute('aria-label');
+    el.setAttribute('aria-label', en ? el.dataset.enAria : el.dataset.heAria);
+  });
+  document.documentElement.lang = en ? 'en' : 'he';
+  document.getElementById('lang-label').textContent = en ? 'עב' : 'EN';
+  try { localStorage.setItem('as-lang', en ? 'en' : 'he'); } catch (err) {}
+}
+document.getElementById('lang-toggle').addEventListener('click', function () { applyLang(!isEn()); });
+try { if (localStorage.getItem('as-lang') === 'en') applyLang(true); } catch (err) {}
+</script>
+</body>
+</html>
