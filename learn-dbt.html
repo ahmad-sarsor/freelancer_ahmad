@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מהו dbt? · מדריכים · אחמד סרסור</title>
+<meta name="description" content="מדריך ל-dbt: מה הוא באמת פותר, ארבעת אבני הבניין, איך מאורגן פרויקט dbt, המלכודות הנפוצות ואיך נראה פרויקט dbt טוב.">
+<link rel="canonical" href="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-dbt.html">
+<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-dbt.html">
+<meta property="og:title" content="מהו dbt?">
+<meta property="og:description" content="בקרת גרסאות, בדיקות ותיעוד לשאילתות שמפעילות את הדשבורדים שלכם.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#07131F">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="learn.css?v=1">
+</head>
+<body>
+<div id="top" dir="rtl" class="page">
+
+  <div class="progress"><span id="progress-bar"></span></div>
+
+  <header class="hdr">
+    <div class="hdr-in">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">AS</span>
+        <span class="brand-txt">
+          <span class="brand-name" data-en="Ahmad Sarsor">אחמד סרסור</span>
+          <span class="brand-sub">Data &amp; BI</span>
+        </span>
+      </a>
+      <nav class="hdr-nav">
+        <a href="index.html#services" data-en="Services">שירותים</a>
+        <a href="agents.html" data-en="AI agents">אייג׳נטים</a>
+        <a href="learn.html" aria-current="page" data-en="Guides">מדריכים</a>
+        <a href="index.html#tech" data-en="Stack">כלים</a>
+        <a href="index.html#clients" data-en="Clients">לקוחות</a>
+      </nav>
+      <div class="hdr-act">
+        <button type="button" id="lang-toggle" class="lang"><span id="lang-label">EN</span></button>
+        <a href="index.html#contact" class="btn-white" data-en="Let's talk">דברו איתי</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-en="Home">בית</a>
+        <i>/</i>
+        <a href="learn.html" data-en="Guides">מדריכים</a>
+        <i>/</i>
+        <span class="here">dbt</span>
+      </nav>
+      <span class="eyebrow-pill" data-en="FUNDAMENTALS · 7 MIN READ">יסודות · 7 דקות קריאה</span>
+      <h1 data-en="What is dbt?">מהו dbt?</h1>
+      <p class="lead" data-en="Git for SQL: version control, tests and documentation for the queries that power your dashboards.">ה-Git של ה-SQL: בקרת גרסאות, בדיקות ותיעוד לשאילתות שמפעילות את הדשבורדים שלכם.</p>
+    </div>
+  </section>
+
+  <div class="art-wrap">
+    <aside class="toc">
+      <div class="toc-h" data-en="On this page">בעמוד הזה</div>
+      <ol id="toc-list"></ol>
+    </aside>
+
+    <article class="art">
+
+      <h2 data-en="The short answer">התשובה הקצרה</h2>
+      <div class="callout">
+        <p data-en="dbt (data build tool) is the standard for transforming data inside your warehouse. You write transformations as SQL files, dbt works out the dependencies, runs them in the right order, tests the output and generates living documentation. All of it under version control.">dbt (data build tool) הוא הסטנדרט לטרנספורמציה של נתונים בתוך מחסן הנתונים. אתם כותבים טרנספורמציות כקובצי SQL, dbt מבין את התלויות, מריץ אותן בסדר הנכון, בודק את הפלט ומייצר תיעוד חי. הכל תחת בקרת גרסאות.</p>
+        <p data-en="Put differently: dbt is what made the data team's code look as professional as the engineering team's code.">במילים אחרות: dbt הוא מה שגרם לקוד של צוות הדאטה להיראות מקצועי כמו הקוד של צוות ההנדסה.</p>
+      </div>
+
+      <h2 data-en="What dbt actually solves">מה dbt באמת פותר</h2>
+      <p data-en="Three problems every data team runs into eventually:">שלוש בעיות שכל צוות דאטה נתקל בהן בסוף:</p>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;No version control on SQL.&lt;/strong&gt; Someone rewrites a metric, breaks three dashboards, and nobody can roll it back."><strong>אין בקרת גרסאות על SQL.</strong> מישהו משכתב מדד, שובר שלושה דשבורדים, ואף אחד לא יכול להחזיר את המצב לאחור.</li>
+        <li data-en="&lt;strong&gt;No tests.&lt;/strong&gt; A column starts returning nulls. Nobody notices for two weeks."><strong>אין בדיקות.</strong> עמודה מתחילה להחזיר ערכי null. אף אחד לא שם לב במשך שבועיים.</li>
+        <li data-en="&lt;strong&gt;No documentation.&lt;/strong&gt; &quot;What does this column mean?&quot; The answer lives in one person's head."><strong>אין תיעוד.</strong> "מה המשמעות של העמודה הזו?" התשובה חיה בראש של מישהו אחד.</li>
+      </ol>
+      <p data-en="dbt solves all three with one pattern: SQL files in Git, tested on every change, documented automatically.">dbt פותר את שלושתן בדפוס אחד: קובצי SQL ב-Git, נבדקים בכל שינוי, מתועדים אוטומטית.</p>
+
+      <h2 data-en="The four building blocks">ארבעת אבני הבניין</h2>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;Models.&lt;/strong&gt; SELECT statements that become tables or views in your warehouse. One model is one file."><strong>Models.</strong> משפטי SELECT שהופכים לטבלאות או ל-views במחסן. כל מודל הוא קובץ אחד.</li>
+        <li data-en="&lt;strong&gt;Tests.&lt;/strong&gt; Assertions about your data: this column is never null, this is unique, these values match this list. They run on every model."><strong>Tests.</strong> הצהרות על הנתונים: העמודה הזו אף פעם לא null, זה ייחודי, הערכים תואמים לרשימה הזו. רצות על כל מודל.</li>
+        <li data-en="&lt;strong&gt;Sources.&lt;/strong&gt; Declarations pointing at the raw tables. They let you reference those tables safely and document them."><strong>Sources.</strong> הצהרות שמצביעות על טבלאות ה-raw. מאפשרות להפנות אליהן בבטחה ולתעד אותן.</li>
+        <li data-en="&lt;strong&gt;Refs.&lt;/strong&gt; How models depend on other models. dbt builds the dependency graph and runs everything in the right order."><strong>Refs.</strong> איך מודלים תלויים במודלים אחרים. dbt בונה את גרף התלויות ומריץ הכל בסדר הנכון.</li>
+      </ol>
+
+      <h2 data-en="How a dbt project is organised">איך מאורגן פרויקט dbt</h2>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;Sources.&lt;/strong&gt; Raw tables from outside, declared only, unchanged."><strong>Sources.</strong> טבלאות raw מבחוץ, מוצהרות בלבד, ללא שינוי.</li>
+        <li data-en="&lt;strong&gt;Staging.&lt;/strong&gt; One staging model per source table. Renaming columns, casting types, light cleaning."><strong>Staging.</strong> מודל staging אחד לכל טבלת מקור. שינוי שמות עמודות, casting של טיפוסים, ניקוי קל.</li>
+        <li data-en="&lt;strong&gt;Intermediate.&lt;/strong&gt; Joins and reshaping that are not yet exposed to the business user."><strong>Intermediate.</strong> Joins ושינויי צורה שעדיין לא נחשפים למשתמש העסקי.</li>
+        <li data-en="&lt;strong&gt;Marts.&lt;/strong&gt; Clean, business-friendly tables per domain: &lt;code&gt;finance.revenue&lt;/code&gt;, &lt;code&gt;marketing.sessions&lt;/code&gt;."><strong>Marts.</strong> טבלאות נקיות וידידותיות לעסק לפי תחום: <code>finance.revenue</code>, <code>marketing.sessions</code>.</li>
+      </ol>
+
+      <h2 data-en="Common traps">מלכודות נפוצות</h2>
+      <ul class="traps">
+        <li data-en="&lt;strong&gt;Skipping tests.&lt;/strong&gt; &quot;We'll add them later&quot; means you will not. Add them while you build."><strong>דילוג על בדיקות.</strong> "נוסיף אותן אחר כך" זה בעצם לא תוסיפו. הוסיפו אותן בזמן הבנייה.</li>
+        <li data-en="&lt;strong&gt;Reaching for macros too early.&lt;/strong&gt; dbt has powerful Jinja macros, and they make debugging harder. Keep it simple until the duplication genuinely hurts."><strong>שימוש ב-macros מוקדם מדי.</strong> ל-dbt יש Jinja macros עוצמתיים, והם מקשים על דיבוג. שמרו על פשטות עד שהכפילות באמת מכאיבה.</li>
+        <li data-en="&lt;strong&gt;Large tables without incremental.&lt;/strong&gt; Rebuilding a 500M row model every hour will burn your warehouse bill. Incremental materializations exist for exactly this."><strong>טבלאות גדולות בלי incremental.</strong> בנייה מחדש של מודל בן 500 מיליון שורות כל שעה תשרוף את חשבון המחסן. materializations של incremental קיימים בדיוק בשביל זה.</li>
+        <li data-en="&lt;strong&gt;No CI.&lt;/strong&gt; Run &lt;code&gt;dbt build&lt;/code&gt; on every pull request. Catch the breakage before the merge, not after."><strong>בלי CI.</strong> הריצו <code>dbt build</code> בכל pull request. תפסו את השבירה לפני המיזוג, לא אחריו.</li>
+      </ul>
+
+      <h2 data-en="What a good dbt project looks like">איך נראה פרויקט dbt טוב</h2>
+      <ul class="good">
+        <li data-en="Every model has at least one test, usually not_null and unique on the primary key.">לכל מודל יש לפחות בדיקה אחת, בדרך כלל <code>not_null</code> ו-<code>unique</code> על המפתח הראשי.</li>
+        <li data-en="A clear convention: staging, intermediate, marts.">קונבנציה ברורה: staging, intermediate, marts.</li>
+        <li data-en="An automatically generated documentation site the team can actually browse.">אתר תיעוד שנוצר אוטומטית ושהצוות באמת מדפדף בו.</li>
+        <li data-en="A lineage graph you can click through to answer &quot;what depends on this column?&quot;">גרף lineage שאפשר ללחוץ עליו כדי לענות על "מה תלוי בעמודה הזו?"</li>
+        <li data-en="Incremental models for every table above roughly 100M rows.">מודלי incremental לכל טבלה מעל בערך 100 מיליון שורות.</li>
+        <li data-en="A metrics layer, where revenue is defined once and used everywhere.">שכבת מדדים, שבה "הכנסה" מוגדרת פעם אחת ובשימוש בכל מקום.</li>
+      </ul>
+
+      <h2 data-en="Where I come in">איפה אני נכנס לתמונה</h2>
+      <p data-en="I build dbt projects from scratch, audit existing ones, and migrate teams off raw SQL or stored procedures. Every project ships with tests, documentation, CI/CD and a metrics layer. Your team holds the keys when the work is done, with no vendor lock-in.">אני בונה פרויקטי dbt מאפס, מבקר פרויקטים קיימים, ומעביר צוותים מ-SQL גולמי או מ-stored procedures. כל פרויקט יוצא לאוויר עם בדיקות, תיעוד, CI/CD ושכבת מדדים. המפתחות עוברים לצוות שלכם כשהעבודה מסתיימת, בלי נעילה לספק.</p>
+
+    </article>
+  </div>
+
+  <nav class="guide-nav" aria-label="guides">
+    <a href="learn-dwh.html" class="gn">
+      <span class="gn-lbl" data-en="Previous guide">המדריך הקודם</span>
+      <span class="gn-ttl" data-en="&lsaquo; What is a data warehouse?">&lsaquo; מהו מחסן נתונים?</span>
+    </a>
+    <a href="learn.html" class="gn">
+      <span class="gn-lbl" data-en="Back">חזרה</span>
+      <span class="gn-ttl" data-en="All guides">כל המדריכים</span>
+    </a>
+  </nav>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2 data-en="Want your SQL under version control and tested?">רוצים שה-SQL שלכם יהיה תחת בקרת גרסאות ובדוק?</h2>
+      <p data-en="Whether it's a new dbt project or a review of one you already run, tell me where things stand and I'll tell you what I'd change first.">בין אם זה פרויקט dbt חדש ובין אם ביקורת על פרויקט קיים, ספרו לי איפה אתם עומדים ואני אגיד לכם מה הייתי משנה קודם.</p>
+      <div class="cta-row">
+        <a href="index.html#contact" class="btn-cyan" data-en="Start a conversation">בואו נדבר</a>
+        <a href="tel:+972528756806" dir="ltr" class="btn-ghost">052-875-6806</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ftr">
+    <div class="ftr-in">
+      <span data-en="Ahmad Sarsor · Data Engineer &amp; BI Developer">אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</span>
+      <a href="mailto:ahmad-s-data@outlook.com" dir="ltr">ahmad-s-data@outlook.com</a>
+    </div>
+  </footer>
+</div>
+<script src="learn.js?v=1"></script>
+</body>
+</html>

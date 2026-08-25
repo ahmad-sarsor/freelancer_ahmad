@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מהי מערכת BI? · מדריכים · אחמד סרסור</title>
+<meta name="description" content="מדריך בשפה פשוטה למערכת BI: ארבעת החלקים של כל מערכת, למה גיליונות מפסיקים להספיק, המלכודות הנפוצות ואיך נראה BI טוב.">
+<link rel="canonical" href="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-bi.html">
+<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-bi.html">
+<meta property="og:title" content="מהי מערכת BI?">
+<meta property="og:description" content="ארבעת החלקים של כל מערכת BI, למה גיליונות מפסיקים להספיק, והמלכודות הנפוצות.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#07131F">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="learn.css?v=1">
+</head>
+<body>
+<div id="top" dir="rtl" class="page">
+
+  <div class="progress"><span id="progress-bar"></span></div>
+
+  <header class="hdr">
+    <div class="hdr-in">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">AS</span>
+        <span class="brand-txt">
+          <span class="brand-name" data-en="Ahmad Sarsor">אחמד סרסור</span>
+          <span class="brand-sub">Data &amp; BI</span>
+        </span>
+      </a>
+      <nav class="hdr-nav">
+        <a href="index.html#services" data-en="Services">שירותים</a>
+        <a href="agents.html" data-en="AI agents">אייג׳נטים</a>
+        <a href="learn.html" aria-current="page" data-en="Guides">מדריכים</a>
+        <a href="index.html#tech" data-en="Stack">כלים</a>
+        <a href="index.html#clients" data-en="Clients">לקוחות</a>
+      </nav>
+      <div class="hdr-act">
+        <button type="button" id="lang-toggle" class="lang"><span id="lang-label">EN</span></button>
+        <a href="index.html#contact" class="btn-white" data-en="Let's talk">דברו איתי</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-en="Home">בית</a>
+        <i>/</i>
+        <a href="learn.html" data-en="Guides">מדריכים</a>
+        <i>/</i>
+        <span class="here" data-en="BI system">מערכת BI</span>
+      </nav>
+      <span class="eyebrow-pill" data-en="FUNDAMENTALS · 6 MIN READ">יסודות · 6 דקות קריאה</span>
+      <h1 data-en="What is a BI system?">מהי מערכת BI?</h1>
+      <p class="lead" data-en="If your CEO has ever asked &quot;where do these numbers come from?&quot;, this guide is for you.">אם המנכ"ל שלכם אי פעם שאל "מאיפה המספרים האלה?", המדריך הזה בשבילכם.</p>
+    </div>
+  </section>
+
+  <div class="art-wrap">
+    <aside class="toc">
+      <div class="toc-h" data-en="On this page">בעמוד הזה</div>
+      <ol id="toc-list"></ol>
+    </aside>
+
+    <article class="art">
+
+      <h2 data-en="The short answer">התשובה הקצרה</h2>
+      <div class="callout">
+        <p data-en="A BI system (Business Intelligence) is the chain of tools that takes raw events from your business, every order, every login, every expense, and turns them into the dashboards and reports your team makes decisions with.">מערכת BI (Business Intelligence, בינה עסקית) היא שרשרת הכלים שלוקחת אירועים גולמיים מהעסק שלכם, כל הזמנה, כל כניסה, כל הוצאה, והופכת אותם לדשבורדים ולדוחות שהצוות שלכם מקבל בהם החלטות.</p>
+        <p data-en="Put differently: it is the difference between asking &quot;what was revenue this month?&quot; and getting an answer in two seconds, versus two days.">במילים אחרות: זה ההבדל בין לשאול "מה ההכנסות שלנו החודש?" ולקבל תשובה תוך שתי שניות, לבין יומיים.</p>
+      </div>
+
+      <h2 data-en="The four parts every BI system has">ארבעת החלקים שיש בכל מערכת BI</h2>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;Sources.&lt;/strong&gt; Your CRM, the e-commerce platform, the ad accounts, the application database. Anywhere events happen is a source."><strong>מקורות.</strong> ה-CRM שלכם, פלטפורמת המסחר, חשבונות הפרסום, מסד הנתונים של האפליקציה. כל מקום שבו קורים אירועים הוא מקור.</li>
+        <li data-en="&lt;strong&gt;Pipelines.&lt;/strong&gt; Scheduled jobs that pull from every source automatically. They retry on failure, alert when they break, and run while you sleep."><strong>פייפליינים.</strong> תהליכים מתוזמנים שמושכים מכל מקור אוטומטית. הם מנסים שוב בכישלון, מתריעים כשהם נשברים, ורצים בזמן שאתם ישנים.</li>
+        <li data-en="&lt;strong&gt;A warehouse.&lt;/strong&gt; A central database where clean, modelled data lives. BigQuery or Snowflake, for example. The single place every dashboard reads from."><strong>מחסן נתונים.</strong> מסד נתונים מרכזי שבו חיים נתונים נקיים וממודלים. למשל BigQuery או Snowflake. המקום היחיד שכל דשבורד קורא ממנו.</li>
+        <li data-en="&lt;strong&gt;Dashboards.&lt;/strong&gt; The display layer your team actually opens each morning. Power BI, Tableau, Looker, Metabase. The right one is the one your team will really use."><strong>דשבורדים.</strong> שכבת התצוגה שהצוות שלכם באמת פותח כל בוקר. Power BI, Tableau, Looker, Metabase. הכלי הנכון הוא זה שהצוות שלכם באמת ישתמש בו.</li>
+      </ol>
+
+      <h2 data-en="Why a BI system and not just spreadsheets?">למה מערכת BI ולא סתם גיליונות?</h2>
+      <p data-en="Spreadsheets work well until the business grows. Then three people send three versions of &quot;the same&quot; report, nobody knows which one is right, and two hours a week disappear into reconciling numbers.">גיליונות עובדים מצוין עד שהעסק גדל. אז שלושה אנשים שולחים שלוש גרסאות של "אותו" דוח, אף אחד לא יודע איזו נכונה, ושעתיים בשבוע נעלמות בהתאמת מספרים.</p>
+      <p data-en="A BI system solves that:">מערכת BI פותרת את זה:</p>
+      <ul class="bul">
+        <li data-en="&lt;strong&gt;One source of truth.&lt;/strong&gt; One number, valid for everyone."><strong>מקור אמת אחד.</strong> מספר אחד, תקף לכולם.</li>
+        <li data-en="&lt;strong&gt;Automatic refresh.&lt;/strong&gt; No more &quot;give me a minute, I'm updating it&quot;."><strong>רענון אוטומטי.</strong> בלי "רגע, אני מעדכן".</li>
+        <li data-en="&lt;strong&gt;It grows with you.&lt;/strong&gt; Ten new sources and another hundred dashboards do not break it."><strong>גדלה איתכם.</strong> עשרה מקורות חדשים ועוד מאה דשבורדים לא שוברים אותה.</li>
+        <li data-en="&lt;strong&gt;It is traceable.&lt;/strong&gt; Every number leads back to the row of data that produced it."><strong>ניתנת למעקב.</strong> כל מספר מוביל אחורה לשורת הנתונים שיצרה אותו.</li>
+      </ul>
+
+      <h2 data-en="Common traps">מלכודות נפוצות</h2>
+      <ul class="traps">
+        <li data-en="&lt;strong&gt;Building before defining.&lt;/strong&gt; With no agreement on what revenue means, the dashboard will contradict itself within a week."><strong>בנייה לפני הגדרה.</strong> בלי הסכמה על מה זו "הכנסה", הדשבורד יסתור את עצמו תוך שבוע.</li>
+        <li data-en="&lt;strong&gt;Too many tools.&lt;/strong&gt; A company running seven different BI tools spends more time reconciling them than getting insight out of them."><strong>יותר מדי כלים.</strong> חברה עם שבעה כלי BI שונים מבזבזת יותר זמן על תיאום ביניהם מאשר על תובנות.</li>
+        <li data-en="&lt;strong&gt;No documentation.&lt;/strong&gt; Every metric should be defined once, in one place. Otherwise each team defines it differently."><strong>בלי תיעוד.</strong> כל מדד צריך להיות מוגדר פעם אחת, במקום אחד. אחרת כל צוות יגדיר אותו אחרת.</li>
+        <li data-en="&lt;strong&gt;No monitoring.&lt;/strong&gt; Pipelines break. If you do not find out, the CEO will find out before you do."><strong>בלי ניטור.</strong> פייפליינים נשברים. אם אתם לא תדעו, המנכ"ל ידע לפניכם.</li>
+      </ul>
+
+      <h2 data-en="What good BI looks like">איך נראה BI טוב</h2>
+      <ul class="good">
+        <li data-en="A dashboard the CEO opens every morning and trusts.">דשבורד שהמנכ"ל פותח כל בוקר וסומך עליו.</li>
+        <li data-en="Every metric defined once, in one place, usually in a metrics layer such as dbt.">כל מדד מוגדר פעם אחת, במקום אחד, בדרך כלל בשכבת מדדים כמו dbt.</li>
+        <li data-en="Data problems reach the team chat before they reach management.">בעיות בנתונים מגיעות לצ׳אט של הצוות לפני שהן מגיעות להנהלה.</li>
+        <li data-en="The team looks for insight instead of spending its time assembling reports.">הצוות מחפש תובנות במקום להשקיע את הזמן בהרכבת דוחות.</li>
+        <li data-en="New questions get answered in hours, not weeks.">שאלות חדשות מקבלות תשובה תוך שעות, לא שבועות.</li>
+      </ul>
+
+      <h2 data-en="Where I come in">איפה אני נכנס לתמונה</h2>
+      <p data-en="I build the whole chain: connecting your sources, modelling the data, standing up the warehouse, and delivering live dashboards your team trusts. If only one link is missing, I'll come in just for that link.">אני בונה את כל השרשרת: חיבור המקורות שלכם, מידול הנתונים, הקמת המחסן, ודשבורדים חיים שהצוות סומך עליהם. אם חסרה רק חוליה אחת, אני נכנס בשבילה בלבד.</p>
+
+    </article>
+  </div>
+
+  <nav class="guide-nav" aria-label="guides">
+    <a href="learn.html" class="gn">
+      <span class="gn-lbl" data-en="Back">חזרה</span>
+      <span class="gn-ttl" data-en="All guides">כל המדריכים</span>
+    </a>
+    <a href="learn-dwh.html" class="gn">
+      <span class="gn-lbl" data-en="Next guide">המדריך הבא</span>
+      <span class="gn-ttl" data-en="What is a data warehouse? &rsaquo;">מהו מחסן נתונים? &rsaquo;</span>
+    </a>
+  </nav>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2 data-en="Want a BI system your team actually trusts?">רוצים מערכת BI שהצוות באמת סומך עליה?</h2>
+      <p data-en="Tell me which systems you run today and which questions keep going unanswered. I'll tell you what I'd build first.">ספרו לי אילו מערכות יש לכם היום ואילו שאלות נשארות בלי תשובה. אני אגיד לכם מה הייתי בונה קודם.</p>
+      <div class="cta-row">
+        <a href="index.html#contact" class="btn-cyan" data-en="Start a conversation">בואו נדבר</a>
+        <a href="tel:+972528756806" dir="ltr" class="btn-ghost">052-875-6806</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ftr">
+    <div class="ftr-in">
+      <span data-en="Ahmad Sarsor · Data Engineer &amp; BI Developer">אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</span>
+      <a href="mailto:ahmad-s-data@outlook.com" dir="ltr">ahmad-s-data@outlook.com</a>
+    </div>
+  </footer>
+</div>
+<script src="learn.js?v=1"></script>
+</body>
+</html>

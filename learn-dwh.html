@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מהו מחסן נתונים? · מדריכים · אחמד סרסור</title>
+<meta name="description" content="מדריך למחסן נתונים: למה אי אפשר פשוט לתשאל את מסד הנתונים של האפליקציה, ארבע השכבות שבתוך מחסן, הפלטפורמות הגדולות והמלכודות הנפוצות.">
+<link rel="canonical" href="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-dwh.html">
+<link rel="icon" href="assets/logos/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ahmad-sarsor.github.io/freelancer_ahmad/learn-dwh.html">
+<meta property="og:title" content="מהו מחסן נתונים?">
+<meta property="og:description" content="ארבע השכבות שבתוך מחסן נתונים, הפלטפורמות הגדולות והמלכודות הנפוצות.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#07131F">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="learn.css?v=1">
+</head>
+<body>
+<div id="top" dir="rtl" class="page">
+
+  <div class="progress"><span id="progress-bar"></span></div>
+
+  <header class="hdr">
+    <div class="hdr-in">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">AS</span>
+        <span class="brand-txt">
+          <span class="brand-name" data-en="Ahmad Sarsor">אחמד סרסור</span>
+          <span class="brand-sub">Data &amp; BI</span>
+        </span>
+      </a>
+      <nav class="hdr-nav">
+        <a href="index.html#services" data-en="Services">שירותים</a>
+        <a href="agents.html" data-en="AI agents">אייג׳נטים</a>
+        <a href="learn.html" aria-current="page" data-en="Guides">מדריכים</a>
+        <a href="index.html#tech" data-en="Stack">כלים</a>
+        <a href="index.html#clients" data-en="Clients">לקוחות</a>
+      </nav>
+      <div class="hdr-act">
+        <button type="button" id="lang-toggle" class="lang"><span id="lang-label">EN</span></button>
+        <a href="index.html#contact" class="btn-white" data-en="Let's talk">דברו איתי</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-en="Home">בית</a>
+        <i>/</i>
+        <a href="learn.html" data-en="Guides">מדריכים</a>
+        <i>/</i>
+        <span class="here" data-en="Data warehouse">מחסן נתונים</span>
+      </nav>
+      <span class="eyebrow-pill" data-en="FUNDAMENTALS · 7 MIN READ">יסודות · 7 דקות קריאה</span>
+      <h1 data-en="What is a data warehouse?">מהו מחסן נתונים (DWH)?</h1>
+      <p class="lead" data-en="A library for your data: ordered, indexed, and built for asking questions rather than for running your application.">ספרייה לנתונים שלכם: מסודרת, ממופתחת, ובנויה לשאול שאלות ולא להריץ את האפליקציה שלכם.</p>
+    </div>
+  </section>
+
+  <div class="art-wrap">
+    <aside class="toc">
+      <div class="toc-h" data-en="On this page">בעמוד הזה</div>
+      <ol id="toc-list"></ol>
+    </aside>
+
+    <article class="art">
+
+      <h2 data-en="The short answer">התשובה הקצרה</h2>
+      <div class="callout">
+        <p data-en="A data warehouse is a database built for &lt;strong&gt;analysis&lt;/strong&gt;, not for running your app. Your application database (Postgres, MySQL, MongoDB) is built for fast writes and updates: adding orders, recording logins, the operational side. A warehouse is built for fast reads across millions of rows, to answer questions like &quot;what was revenue by channel by week, last quarter?&quot;">מחסן נתונים (Data Warehouse, בקיצור DWH) הוא מסד נתונים שנבנה ל<strong>ניתוח</strong>, לא להרצת האפליקציה שלכם. מסד הנתונים של האפליקציה (Postgres, MySQL, MongoDB) בנוי לכתיבות ועדכונים מהירים: להוסיף הזמנות, לתעד כניסות, הצד התפעולי. מחסן נתונים בנוי לקריאה מהירה על פני מיליוני שורות, כדי לענות על שאלות כמו "מה היו ההכנסות לפי ערוץ לפי שבוע ברבעון שעבר?"</p>
+        <p data-en="Same data, different job.">אותם נתונים, תפקיד שונה.</p>
+      </div>
+
+      <h2 data-en="Why not just query the app database?">למה אי אפשר פשוט לתשאל את מסד הנתונים של האפליקציה?</h2>
+      <p data-en="Three reasons most teams hit a wall on:">שלוש סיבות שבהן רוב הצוותים נתקלים בקיר:</p>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;Performance.&lt;/strong&gt; Heavy analytical queries lock tables and slow down the live application. Customers feel it."><strong>ביצועים.</strong> שאילתות ניתוח כבדות נועלות טבלאות ומאטות את האפליקציה החיה. הלקוחות מרגישים את זה.</li>
+        <li data-en="&lt;strong&gt;Joining sources.&lt;/strong&gt; Your CRM is in HubSpot, orders are in Postgres, ads are in Meta. They never meet, until you put them in one warehouse."><strong>חיבור מקורות.</strong> ה-CRM שלכם ב-HubSpot, ההזמנות ב-Postgres, הפרסום ב-Meta. הם אף פעם לא נפגשים, עד שתשימו אותם במחסן אחד.</li>
+        <li data-en="&lt;strong&gt;History.&lt;/strong&gt; The app database holds the current state. A warehouse keeps every change, so you can ask &quot;what plan was this customer on six months ago?&quot;"><strong>היסטוריה.</strong> מסד הנתונים של האפליקציה שומר את המצב הנוכחי. מחסן שומר כל שינוי, כך שאפשר לשאול "באיזו תוכנית הלקוח הזה היה לפני חצי שנה?"</li>
+      </ol>
+
+      <h2 data-en="The four layers inside a warehouse">ארבע השכבות שבתוך מחסן</h2>
+      <ol class="steps">
+        <li data-en="&lt;strong&gt;Raw.&lt;/strong&gt; An exact copy of the source data, unchanged. The audit trail you can always go back to."><strong>Raw.</strong> העתק מדויק של נתוני המקור, ללא שינוי. מסלול הביקורת שתמיד אפשר לחזור אליו.</li>
+        <li data-en="&lt;strong&gt;Staging.&lt;/strong&gt; Cleaned and lightly modelled. Renaming columns, fixing types, removing duplicates."><strong>Staging.</strong> מנוקה וממודל קלות. שינוי שמות עמודות, תיקון טיפוסים, הסרת כפילויות.</li>
+        <li data-en="&lt;strong&gt;Marts.&lt;/strong&gt; Business-friendly tables per domain: &lt;code&gt;marketing.attribution&lt;/code&gt;, &lt;code&gt;finance.revenue&lt;/code&gt;, &lt;code&gt;product.activation&lt;/code&gt;. This is what the dashboards read."><strong>Marts.</strong> טבלאות ידידותיות לעסק לפי תחום: <code>marketing.attribution</code>, <code>finance.revenue</code>, <code>product.activation</code>. זה מה שהדשבורדים קוראים.</li>
+        <li data-en="&lt;strong&gt;A metrics layer.&lt;/strong&gt; The definitions of revenue, MRR, active user. Defined once, used everywhere."><strong>שכבת מדדים.</strong> ההגדרות של "הכנסה", "MRR", "משתמש פעיל". מוגדרות פעם אחת, בשימוש בכל מקום.</li>
+      </ol>
+
+      <h2 data-en="The big platforms">הפלטפורמות הגדולות</h2>
+      <ul class="bul">
+        <li data-en="&lt;strong&gt;BigQuery (Google).&lt;/strong&gt; Serverless, pay per query. Best for teams already on GCP."><strong>BigQuery (Google).</strong> Serverless, תשלום לפי שאילתה. הכי מתאים לצוותים שכבר ב-GCP.</li>
+        <li data-en="&lt;strong&gt;Snowflake.&lt;/strong&gt; Multi-cloud, separates storage from compute. Strong when you need precise scaling."><strong>Snowflake.</strong> מולטי-ענן, מפריד אחסון מחישוב. חזק כשצריך סקיילינג מדויק.</li>
+        <li data-en="&lt;strong&gt;Redshift (AWS).&lt;/strong&gt; Mature, native to AWS, predictable pricing."><strong>Redshift (AWS).</strong> בוגר, נייטיב ל-AWS, תמחור צפוי.</li>
+        <li data-en="&lt;strong&gt;Databricks.&lt;/strong&gt; If your data team lives mostly in ML and Python."><strong>Databricks.</strong> אם צוות הדאטה שלכם חי בעיקר ב-ML ובפייתון.</li>
+      </ul>
+      <p data-en="For most teams under fifty people, BigQuery wins on simplicity and cost. Above that, the choice is more about fitting your existing ecosystem than about features.">לרוב הצוותים מתחת לחמישים איש, BigQuery מנצח בפשטות ובעלות. מעבר לזה, הבחירה היא יותר עניין של התאמה לאקוסיסטם הקיים מאשר של פיצ׳רים.</p>
+
+      <h2 data-en="Common traps">מלכודות נפוצות</h2>
+      <ul class="traps">
+        <li data-en="&lt;strong&gt;Skipping staging.&lt;/strong&gt; Going from raw straight to dashboards. Works for a month, breaks the moment a source changes its schema."><strong>דילוג על staging.</strong> ללכת מ-raw ישר לדשבורדים. עובד חודש, נשבר ברגע שמקור משנה סכמה.</li>
+        <li data-en="&lt;strong&gt;No naming convention.&lt;/strong&gt; &lt;code&gt;revenue_v2_FINAL_use_this_one&lt;/code&gt; reaches production. We have all seen it."><strong>בלי קונבנציית שמות.</strong> <code>revenue_v2_FINAL_use_this_one</code> מגיע לפרודקשן. כולנו ראינו את זה.</li>
+        <li data-en="&lt;strong&gt;Over-engineering early.&lt;/strong&gt; You do not need a real-time streaming pipeline on day one. Start with hourly batch and add streaming when a real use case asks for it."><strong>הנדסת יתר מוקדם מדי.</strong> אין צורך בפייפליין סטרימינג בזמן אמת מהיום הראשון. התחילו באצווה שעתית והוסיפו סטרימינג כשמקרה שימוש אמיתי דורש את זה.</li>
+        <li data-en="&lt;strong&gt;No tests.&lt;/strong&gt; The first time a column starts returning null quietly, you will wish you had dbt tests."><strong>בלי בדיקות.</strong> בפעם הראשונה שעמודה מתחילה להחזיר null בשקט, תרצו שהיו לכם בדיקות dbt.</li>
+      </ul>
+
+      <h2 data-en="What a good warehouse looks like">איך נראה מחסן טוב</h2>
+      <ul class="good">
+        <li data-en="Source data lands in raw within an hour of the event.">נתוני מקור נוחתים ב-raw תוך שעה מהאירוע.</li>
+        <li data-en="A new dashboard takes a day to build, not a week.">דשבורד חדש לוקח יום לבנות, לא שבוע.</li>
+        <li data-en="Cost is predictable and measurable per team or per dashboard.">העלות צפויה ונמדדת לפי צוות או לפי דשבורד.</li>
+        <li data-en="Every metric has a definition, an owner and a test.">לכל מדד יש הגדרה, בעלים ובדיקה.</li>
+        <li data-en="When something breaks, you know first. Not your CEO.">כשמשהו נשבר, אתם יודעים ראשונים. לא המנכ"ל.</li>
+      </ul>
+
+      <h2 data-en="Where I come in">איפה אני נכנס לתמונה</h2>
+      <p data-en="I build the warehouse end to end: source connectors, the data model, CI/CD and monitoring. The work runs inside your own cloud (GCP, AWS or Azure) with read-only service accounts on the sources, so your raw data never leaves your environment. When the work is done, your team holds the keys.">אני בונה את המחסן מקצה לקצה: מחברי מקור, מודל הנתונים, CI/CD וניטור. העבודה רצה בתוך הענן שלכם (GCP, AWS או Azure) עם חשבונות שירות לקריאה בלבד על המקורות, כך שהנתונים הגולמיים לא יוצאים מהסביבה שלכם. כשהעבודה מסתיימת, המפתחות בידיים של הצוות שלכם.</p>
+
+    </article>
+  </div>
+
+  <nav class="guide-nav" aria-label="guides">
+    <a href="learn-bi.html" class="gn">
+      <span class="gn-lbl" data-en="Previous guide">המדריך הקודם</span>
+      <span class="gn-ttl" data-en="&lsaquo; What is a BI system?">&lsaquo; מהי מערכת BI?</span>
+    </a>
+    <a href="learn-dbt.html" class="gn">
+      <span class="gn-lbl" data-en="Next guide">המדריך הבא</span>
+      <span class="gn-ttl" data-en="What is dbt? &rsaquo;">מהו dbt? &rsaquo;</span>
+    </a>
+  </nav>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2 data-en="Thinking about building a warehouse?">שוקלים להקים מחסן נתונים?</h2>
+      <p data-en="Tell me which systems hold your data today and what you need it to answer. I'll tell you honestly whether a warehouse is the right next step.">ספרו לי אילו מערכות מחזיקות את הדאטה שלכם היום ועל מה הוא צריך לענות. אני אגיד לכם בכנות אם מחסן הוא הצעד הנכון עכשיו.</p>
+      <div class="cta-row">
+        <a href="index.html#contact" class="btn-cyan" data-en="Start a conversation">בואו נדבר</a>
+        <a href="tel:+972528756806" dir="ltr" class="btn-ghost">052-875-6806</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ftr">
+    <div class="ftr-in">
+      <span data-en="Ahmad Sarsor · Data Engineer &amp; BI Developer">אחמד סרסור · מהנדס דאטה ומפתח מערכות BI</span>
+      <a href="mailto:ahmad-s-data@outlook.com" dir="ltr">ahmad-s-data@outlook.com</a>
+    </div>
+  </footer>
+</div>
+<script src="learn.js?v=1"></script>
+</body>
+</html>
